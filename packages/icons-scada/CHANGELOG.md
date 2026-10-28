@@ -1,5 +1,13 @@
 # @carbide/icons-scada
 
+## 1.3.2
+
+### Patch Changes
+
+- 6a04075: Alle Pakete tragen auf npmjs.com das Schlagwort `design-system`. Am Code ändert sich nichts.
+- Updated dependencies [6a04075]
+  - @odinscode/carbide-token@0.9.2
+
 ## 1.3.1
 
 ### Patch Changes

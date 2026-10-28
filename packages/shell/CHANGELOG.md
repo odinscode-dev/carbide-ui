@@ -1,5 +1,13 @@
 # @carbide/shell
 
+## 1.8.3
+
+### Patch Changes
+
+- 6a04075: Alle Pakete tragen auf npmjs.com das Schlagwort `design-system`. Am Code ändert sich nichts.
+- Updated dependencies [6a04075]
+  - @odinscode/carbide-core@0.35.3
+
 ## 1.8.2
 
 ### Patch Changes

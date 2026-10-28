@@ -1,5 +1,11 @@
 # @carbide/token
 
+## 0.9.2
+
+### Patch Changes
+
+- 6a04075: Alle Pakete tragen auf npmjs.com das Schlagwort `design-system`. Am Code ändert sich nichts.
+
 ## 0.9.1
 
 ### Patch Changes

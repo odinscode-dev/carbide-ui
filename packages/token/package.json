@@ -1,6 +1,6 @@
 {
   "name": "@odinscode/carbide-token",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Carbide UI design tokens: colors, density, spacing, typography, motion and the Carbide typefaces as CSS custom properties",
   "license": "Apache-2.0 AND OFL-1.1",
   "type": "module",
@@ -32,10 +32,12 @@
   },
   "keywords": [
     "carbide-ui",
-    "design-tokens",
     "css",
-    "theme",
-    "dark-mode"
+    "dark-mode",
+    "design-system",
+    "design-tokens",
+    "react",
+    "theme"
   ],
   "author": "Vitali Wottschel",
   "homepage": "https://showcase.growdog.tech/carbide-ui/",

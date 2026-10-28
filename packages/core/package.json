@@ -1,6 +1,6 @@
 {
   "name": "@odinscode/carbide-core",
-  "version": "0.35.2",
+  "version": "0.35.3",
   "description": "Carbide UI components for React: forms, dialogs, navigation, a data grid and charts, in light and dark and three densities",
   "license": "Apache-2.0",
   "type": "module",
@@ -43,11 +43,11 @@
   },
   "keywords": [
     "carbide-ui",
-    "react",
+    "charts",
     "components",
-    "design-system",
     "data-grid",
-    "charts"
+    "design-system",
+    "react"
   ],
   "author": "Vitali Wottschel",
   "homepage": "https://showcase.growdog.tech/carbide-ui/",

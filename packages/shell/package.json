@@ -1,6 +1,6 @@
 {
   "name": "@odinscode/carbide-shell",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "Carbide UI page shells for React: AdminShell, BoardShell, FieldShell, list and object pages",
   "license": "Apache-2.0",
   "type": "module",
@@ -35,10 +35,11 @@
   },
   "keywords": [
     "carbide-ui",
-    "react",
+    "dashboard",
+    "design-system",
     "layout",
-    "shell",
-    "dashboard"
+    "react",
+    "shell"
   ],
   "author": "Vitali Wottschel",
   "homepage": "https://showcase.growdog.tech/carbide-ui/",

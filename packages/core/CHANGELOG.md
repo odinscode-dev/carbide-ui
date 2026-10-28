@@ -1,5 +1,13 @@
 # @carbide/core
 
+## 0.35.3
+
+### Patch Changes
+
+- 6a04075: Alle Pakete tragen auf npmjs.com das Schlagwort `design-system`. Am Code ändert sich nichts.
+- Updated dependencies [6a04075]
+  - @odinscode/carbide-token@0.9.2
+
 ## 0.35.2
 
 ### Patch Changes
