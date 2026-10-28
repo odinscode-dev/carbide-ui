@@ -1,0 +1,25 @@
+Carbide UI, @odinscode/carbide-token
+Copyright 2026 Vitali Wottschel. Licensed under the Apache License, Version 2.0.
+
+Dieses Paket enthaelt Farbwerte aus fremden Werken unter der Apache License 2.0.
+Die Pflichten aus Abschnitt 4 der Lizenz -- Nennung und Weitergabe der
+NOTICE-Hinweise -- werden hier erfuellt. Einzelheiten: LIZENZEN.md im Repository.
+
+------------------------------------------------------------------------
+
+@cloudscape-design/design-tokens und cloudscape-design/components (Apache License 2.0)
+Werte der Farbrampen in packages/token/src/primitive/ramps.css (Systempalette,
+style-dictionary/core/palette-values.ts) und der Schwellenwerte in
+packages/token/src/semantic/chart.css. NOTICE des Pakets, unveraendert:
+
+  @cloudscape-design/design-tokens
+  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+------------------------------------------------------------------------
+
+@carbon/colors (Apache License 2.0)
+Werte der Grauleiter in packages/token/src/primitive/gray.css, Cool Gray
+aus Version 11, nach OKLCH umgerechnet. Das Paket liefert keine NOTICE-Datei
+mit; die Nennung hier erfuellt die Lizenz.
+
+  Copyright IBM Corp. 2018, 2023

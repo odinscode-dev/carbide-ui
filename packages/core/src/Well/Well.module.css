@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--carbide-sp-1);
+  box-sizing: border-box;
+  min-inline-size: 0;
+  min-block-size: 0;
+  padding: var(--carbide-sp-1) var(--carbide-sp-2);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-inset);
+  box-shadow: var(--carbide-shadow-inset);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--carbide-sp-3);
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-label);
+  letter-spacing: var(--carbide-tracking-label);
+  white-space: nowrap;
+}
+
+.value {
+  font-family: var(--carbide-font-mono);
+  font-variant-numeric: tabular-nums;
+}

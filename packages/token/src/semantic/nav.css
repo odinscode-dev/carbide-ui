@@ -1,0 +1,26 @@
+:root,
+[data-theme='light'] {
+  --carbide-nav-group-blue: var(--carbide-blue-2-600);
+  --carbide-nav-group-orange: var(--carbide-orange-600);
+  --carbide-nav-group-green: var(--carbide-green-600);
+  --carbide-nav-group-yellow: var(--carbide-yellow-600);
+  --carbide-nav-group-slate: var(--carbide-text-2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --carbide-nav-group-blue: var(--carbide-blue-2-400);
+    --carbide-nav-group-orange: var(--carbide-orange-400);
+    --carbide-nav-group-green: var(--carbide-green-500);
+    --carbide-nav-group-yellow: var(--carbide-yellow-400);
+    --carbide-nav-group-slate: var(--carbide-text-2);
+  }
+}
+
+[data-theme='dark'] {
+  --carbide-nav-group-blue: var(--carbide-blue-2-400);
+  --carbide-nav-group-orange: var(--carbide-orange-400);
+  --carbide-nav-group-green: var(--carbide-green-500);
+  --carbide-nav-group-yellow: var(--carbide-yellow-400);
+  --carbide-nav-group-slate: var(--carbide-text-2);
+}

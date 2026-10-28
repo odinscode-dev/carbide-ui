@@ -1,0 +1,19 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-2);
+  margin: 0;
+  padding-inline-start: var(--carbide-sp-6);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  list-style-type: disc;
+}
+
+.root[data-ordered] {
+  list-style-type: decimal;
+}
+
+.item > .root {
+  margin-block-start: var(--carbide-sp-2);
+}

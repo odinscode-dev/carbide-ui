@@ -1,0 +1,112 @@
+@property --level {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: true;
+}
+
+.sheet {
+  padding: var(--carbide-sp-5);
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+}
+
+.panel {
+  margin-bottom: var(--carbide-sp-7);
+}
+
+.title {
+  margin: 0 0 var(--carbide-sp-3);
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-caps);
+  text-transform: uppercase;
+}
+
+.hint {
+  margin: 0 0 var(--carbide-sp-5);
+  max-width: 60ch;
+  color: var(--carbide-text-helper);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 18em max-content 1fr;
+  gap: var(--carbide-sp-2) var(--carbide-sp-5);
+  align-items: baseline;
+}
+
+.name {
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-small);
+}
+
+.value {
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-small);
+  font-variant-numeric: tabular-nums;
+}
+
+.usage {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.measurement {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  align-items: baseline;
+  gap: var(--carbide-sp-2);
+  margin-bottom: var(--carbide-sp-5);
+  transition: --level var(--carbide-duration-moderate-2) var(--carbide-ease-standard);
+}
+
+.number {
+  counter-reset: level var(--level);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-display);
+  font-variant-numeric: tabular-nums;
+  font-weight: 200;
+  letter-spacing: var(--carbide-tracking-display);
+}
+
+.number::after {
+  content: counter(level);
+}
+
+.unit {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-lead);
+}
+
+.bar {
+  grid-column: 1 / -1;
+  width: 32ch;
+  height: var(--carbide-sp-4);
+  background: var(--carbide-layer-2);
+  border: 1px solid var(--carbide-border-subtle);
+}
+
+.fill {
+  width: calc(var(--level) * 1%);
+  height: 100%;
+  background: var(--carbide-accent);
+}
+
+.button {
+  height: var(--carbide-control-h);
+  padding: 0 var(--carbide-sp-4);
+  border: 1px solid var(--carbide-border-strong);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-layer-2);
+  color: var(--carbide-accent-text);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--carbide-fs-body);
+}

@@ -1,0 +1,161 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-2);
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--carbide-sp-3);
+}
+
+.label {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+}
+
+.value {
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-small);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: normal;
+  white-space: nowrap;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  block-size: var(--carbide-sp-5);
+  min-block-size: var(--carbide-touch-min);
+}
+
+.track {
+  position: relative;
+  flex: 1 1 auto;
+  block-size: var(--carbide-sp-2);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-border-subtle);
+  overflow: hidden;
+}
+
+.range {
+  block-size: 100%;
+  background: var(--carbide-accent);
+}
+
+.root[data-variant='error'] .range {
+  background: var(--carbide-status-error-border);
+}
+
+.root[data-variant='warning'] .range {
+  background: var(--carbide-status-warn-border);
+}
+
+.root[data-variant='success'] .range {
+  background: var(--carbide-status-ok-border);
+}
+
+.thumb {
+  box-sizing: border-box;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+  inset-block: 0;
+  margin-block: auto;
+  border: 1px solid var(--carbide-layer-1);
+  border-radius: 50%;
+  background: var(--carbide-accent);
+  cursor: grab;
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.root[data-variant='error'] .thumb {
+  background: var(--carbide-status-error-border);
+}
+
+.root[data-variant='warning'] .thumb {
+  background: var(--carbide-status-warn-border);
+}
+
+.root[data-variant='success'] .thumb {
+  background: var(--carbide-status-ok-border);
+}
+
+.thumb:hover,
+.thumb[data-dragging] {
+  background: color-mix(in oklab, var(--carbide-accent) 88%, var(--carbide-text));
+}
+
+.root[data-variant='error'] .thumb:hover,
+.root[data-variant='error'] .thumb[data-dragging] {
+  background: color-mix(in oklab, var(--carbide-status-error-border) 88%, var(--carbide-text));
+}
+
+.root[data-variant='warning'] .thumb:hover,
+.root[data-variant='warning'] .thumb[data-dragging] {
+  background: color-mix(in oklab, var(--carbide-status-warn-border) 88%, var(--carbide-text));
+}
+
+.root[data-variant='success'] .thumb:hover,
+.root[data-variant='success'] .thumb[data-dragging] {
+  background: color-mix(in oklab, var(--carbide-status-ok-border) 88%, var(--carbide-text));
+}
+
+.thumb[data-dragging] {
+  cursor: grabbing;
+}
+
+.markers {
+  block-size: var(--carbide-sp-6);
+}
+
+.marker {
+  display: grid;
+  gap: var(--carbide-sp-1);
+  justify-items: center;
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: normal;
+  white-space: nowrap;
+}
+
+.marker::before {
+  content: '';
+  inline-size: 1px;
+  block-size: var(--carbide-sp-2);
+  background: var(--carbide-border-strong);
+}
+
+.root[data-invalid] .range {
+  background: var(--carbide-status-error-border);
+}
+
+.root[data-invalid] .thumb {
+  background: var(--carbide-status-error-border);
+}
+
+.root[data-disabled] .label,
+.root[data-disabled] .value,
+.root[data-disabled] .marker {
+  color: var(--carbide-text-placeholder);
+}
+
+.root[data-disabled] .range {
+  background: var(--carbide-border-strong);
+}
+
+.root[data-disabled] .thumb,
+.root[data-disabled] .thumb:hover {
+  background: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}

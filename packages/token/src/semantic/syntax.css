@@ -1,0 +1,29 @@
+:root,
+[data-theme='light'] {
+  --carbide-syntax-keyword: var(--carbide-purple-600);
+  --carbide-syntax-string: var(--carbide-green-600);
+  --carbide-syntax-number: var(--carbide-orange-600);
+  --carbide-syntax-function: var(--carbide-blue-2-600);
+  --carbide-syntax-name: var(--carbide-teal-600);
+  --carbide-syntax-variable: var(--carbide-blue-1-600);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --carbide-syntax-keyword: var(--carbide-purple-400);
+    --carbide-syntax-string: var(--carbide-green-500);
+    --carbide-syntax-number: var(--carbide-orange-400);
+    --carbide-syntax-function: var(--carbide-blue-2-400);
+    --carbide-syntax-name: var(--carbide-teal-500);
+    --carbide-syntax-variable: var(--carbide-blue-1-400);
+  }
+}
+
+[data-theme='dark'] {
+  --carbide-syntax-keyword: var(--carbide-purple-400);
+  --carbide-syntax-string: var(--carbide-green-500);
+  --carbide-syntax-number: var(--carbide-orange-400);
+  --carbide-syntax-function: var(--carbide-blue-2-400);
+  --carbide-syntax-name: var(--carbide-teal-500);
+  --carbide-syntax-variable: var(--carbide-blue-1-400);
+}

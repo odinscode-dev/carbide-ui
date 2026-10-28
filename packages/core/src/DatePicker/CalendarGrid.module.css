@@ -1,0 +1,146 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.viewControl {
+  display: flex;
+  align-items: center;
+  gap: var(--carbide-sp-2);
+}
+
+.navButton {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  inline-size: var(--carbide-control-h);
+  block-size: var(--carbide-control-h);
+  min-inline-size: var(--carbide-touch-min);
+  min-block-size: var(--carbide-touch-min);
+  padding: 0;
+  border: 0;
+  border-radius: var(--carbide-radius);
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.navButton:hover {
+  background: var(--carbide-layer-2);
+}
+
+.glyph {
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}
+
+.select {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-3);
+  border: 1px solid transparent;
+  border-radius: var(--carbide-radius);
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.select:hover {
+  background: var(--carbide-layer-2);
+}
+
+.table {
+  border-collapse: collapse;
+  inline-size: 100%;
+}
+
+.weekday {
+  padding-block: var(--carbide-sp-2);
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+  text-align: center;
+}
+
+.cell {
+  padding: 0;
+  text-align: center;
+}
+
+.cellTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  inline-size: var(--carbide-control-h);
+  block-size: var(--carbide-control-h);
+  min-inline-size: var(--carbide-touch-min);
+  min-block-size: var(--carbide-touch-min);
+  border-radius: var(--carbide-radius);
+  color: inherit;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.cellTrigger:hover {
+  background: var(--carbide-layer-2);
+}
+
+.cellTrigger[data-today] {
+  border: 1px solid var(--carbide-border-strong);
+}
+
+.cellTrigger[data-in-range] {
+  border-radius: 0;
+  background: var(--carbide-accent-soft);
+}
+
+.cellTrigger[data-selected],
+.cellTrigger[data-range-start],
+.cellTrigger[data-range-end] {
+  background: var(--carbide-accent);
+  color: var(--carbide-inverse-text);
+}
+
+.cellTrigger[data-range-start] {
+  border-start-start-radius: var(--carbide-radius);
+  border-end-start-radius: var(--carbide-radius);
+}
+
+.cellTrigger[data-range-end] {
+  border-start-end-radius: var(--carbide-radius);
+  border-end-end-radius: var(--carbide-radius);
+}
+
+.cellTrigger[data-outside-range] {
+  color: var(--carbide-text-placeholder);
+}
+
+.cellTrigger[data-unavailable] {
+  color: var(--carbide-text-placeholder);
+  text-decoration: line-through;
+}
+
+.cellTrigger[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.cellTrigger[data-disabled]:hover {
+  background: none;
+}

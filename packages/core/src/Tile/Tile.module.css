@@ -1,0 +1,105 @@
+.root {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--carbide-sp-5);
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius-surface);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: start;
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.root[data-clickable],
+.root[data-selectable] {
+  cursor: pointer;
+}
+
+.root[data-clickable]:enabled:hover,
+.root[data-selectable]:enabled:hover {
+  background: var(--carbide-layer-2);
+}
+
+.root[data-selected] {
+  border-color: var(--carbide-accent);
+  box-shadow: inset 0 0 0 1px var(--carbide-accent);
+}
+
+.root[data-disabled] {
+  border-color: var(--carbide-border-subtle);
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.root[data-disabled][data-selected] {
+  border-color: var(--carbide-border-strong);
+  box-shadow: inset 0 0 0 1px var(--carbide-border-strong);
+}
+
+/*
+ * Raised: the tile stands out of the page. The surface runs from light to
+ * dark, the top edge catches the light, the shadow grows under the
+ * pointer while the tile lifts a little.
+ */
+.root[data-elevation='raised'] {
+  border-top-color: var(--carbide-rim);
+  background: linear-gradient(180deg, var(--carbide-raised-top), var(--carbide-raised-bottom));
+  box-shadow: var(--carbide-shadow-raised);
+  transition:
+    translate var(--carbide-duration-moderate-1) var(--carbide-ease-standard),
+    box-shadow var(--carbide-duration-moderate-1) var(--carbide-ease-standard),
+    border-color var(--carbide-duration-moderate-1) var(--carbide-ease-standard);
+}
+
+.root[data-elevation='raised']:hover:not([data-disabled]) {
+  translate: 0 calc(-1 * var(--carbide-sp-1));
+  box-shadow: var(--carbide-shadow-raised-hover);
+}
+
+/*
+ * Accent: a bar along the top edge, a tint in the top corner and in the
+ * border, all in the colour that names what the tile shows.
+ */
+.root[data-accent] {
+  border-color: color-mix(in oklab, var(--carbide-border-subtle) 80%, var(--carbide-tile-accent));
+  background-image:
+    radial-gradient(
+      closest-side at 10% 0%,
+      color-mix(in oklab, var(--carbide-tile-accent) 12%, transparent),
+      transparent
+    ),
+    linear-gradient(180deg, var(--carbide-raised-top), var(--carbide-raised-bottom));
+  background-repeat: no-repeat;
+  background-size:
+    60% var(--carbide-sp-10),
+    100% 100%;
+  box-shadow: inset 0 var(--carbide-sp-1) 0 var(--carbide-tile-accent);
+}
+
+.root[data-accent]:not([data-elevation='raised']) {
+  background-image: radial-gradient(
+    closest-side at 10% 0%,
+    color-mix(in oklab, var(--carbide-tile-accent) 12%, transparent),
+    transparent
+  );
+  background-color: var(--carbide-layer-1);
+}
+
+.root[data-accent][data-elevation='raised'] {
+  border-top-color: var(--carbide-rim);
+  box-shadow:
+    inset 0 var(--carbide-sp-1) 0 var(--carbide-tile-accent),
+    var(--carbide-shadow-raised);
+}
+
+.root[data-accent][data-elevation='raised']:hover:not([data-disabled]) {
+  border-color: color-mix(in oklab, var(--carbide-tile-accent) 55%, var(--carbide-border-strong));
+  box-shadow:
+    inset 0 var(--carbide-sp-1) 0 var(--carbide-tile-accent),
+    var(--carbide-shadow-raised-hover),
+    0 0 0 1px color-mix(in oklab, var(--carbide-tile-accent) 35%, transparent);
+}

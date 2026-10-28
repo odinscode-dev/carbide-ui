@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  gap: var(--carbide-sp-7);
+}
+
+.grid[data-fill] {
+  flex: 1 1 auto;
+  min-block-size: 0;
+  grid-auto-rows: minmax(0, 1fr);
+}

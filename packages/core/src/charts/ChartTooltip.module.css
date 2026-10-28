@@ -1,0 +1,68 @@
+/* Same surface as Popover.content: a floating card on layer 1 with a
+   strong hairline and the elevated shadow. */
+.content {
+  box-sizing: border-box;
+  min-inline-size: 10rem;
+  padding: var(--carbide-sp-3) var(--carbide-sp-4);
+  border: 1px solid var(--carbide-border-strong);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+  line-height: 1.4;
+  box-shadow: var(--carbide-shadow-elevated);
+}
+
+.label {
+  padding-block-end: var(--carbide-sp-2);
+  margin-block-end: var(--carbide-sp-2);
+  border-block-end: 1px solid var(--carbide-border-subtle);
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 600;
+  letter-spacing: var(--carbide-tracking-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--carbide-sp-3);
+  row-gap: var(--carbide-sp-1);
+}
+
+.row {
+  display: contents;
+}
+
+.swatch {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+}
+
+.name {
+  overflow: hidden;
+  color: var(--carbide-text-2);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.value {
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-mono);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+  white-space: nowrap;
+}
+
+/* A text label can be a whole sentence: it wraps inside the card instead of
+   stretching it. */
+.label {
+  max-inline-size: 24rem;
+  overflow-wrap: anywhere;
+}

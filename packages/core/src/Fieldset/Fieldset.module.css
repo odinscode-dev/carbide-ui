@@ -1,0 +1,26 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-4);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  padding: 0;
+  color: var(--carbide-text-2);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+}
+
+.root[data-disabled] .legend {
+  color: var(--carbide-text-placeholder);
+}
+
+.fields {
+  display: grid;
+  gap: var(--carbide-sp-5);
+}

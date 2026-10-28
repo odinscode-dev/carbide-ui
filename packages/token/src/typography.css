@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'Carbide Sans';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/CarbideSans-Var.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Display';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('../fonts/CarbideDisplay-Var.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Mono';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../fonts/CarbideMono-100.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Mono';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/CarbideMono-200.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/CarbideMono-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/CarbideMono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/CarbideMono-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/CarbideMono-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carbide Mono';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/CarbideMono-800.woff2') format('woff2');
+}
+
+:root {
+
+  --carbide-font-sans: 'Carbide Sans', system-ui, sans-serif;
+  --carbide-font-display: 'Carbide Display', 'Carbide Sans', system-ui, sans-serif;
+  --carbide-font-mono: 'Carbide Mono', ui-monospace, monospace;
+
+  --carbide-fs-label: 12px;
+  --carbide-fs-small: 13px;
+  --carbide-fs-body: var(--carbide-font-body);
+  --carbide-fs-lead: 18px;
+  --carbide-fs-h3: 20px;
+  --carbide-fs-h2: 26px;
+  --carbide-fs-h1: 32px;
+  --carbide-fs-display: 44px;
+
+  --carbide-tracking-display: -0.02em;
+  --carbide-tracking-heading: -0.01em;
+  --carbide-tracking-body: 0;
+  --carbide-tracking-small: 0.01em;
+  --carbide-tracking-label: 0.02em;
+  --carbide-tracking-caps: 0.08em;
+  --carbide-tracking-dense: 0.005em;
+}

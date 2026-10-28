@@ -1,0 +1,62 @@
+.positioner {
+  --z-index: var(--carbide-z-dropdown);
+  --arrow-size: var(--carbide-sp-4);
+  --arrow-background: var(--carbide-layer-1);
+}
+
+.positioner:has(.content[data-background]) {
+  --arrow-background: var(--carbide-popover-background);
+}
+
+.content {
+  box-sizing: border-box;
+
+  max-inline-size: 22rem;
+  padding: var(--carbide-sp-5);
+  border: 1px solid var(--carbide-popover-border-color, var(--carbide-border-strong));
+  border-radius: var(--carbide-radius-surface);
+  background: var(--carbide-popover-background, var(--carbide-layer-1));
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  line-height: 1.4;
+  box-shadow: var(--carbide-shadow-elevated);
+  /* @zag-js/popper reads this element's *computed* z-index and copies it
+     onto the positioner's `--z-index` the first time it positions the
+     popover (get-placement.mjs) — see AvatarMenu.module.css. Without a
+     real z-index here, that copy overwrites the `--z-index` set on
+     `.positioner` above with "auto", and a host page's modal
+     (carbide-z-modal: 9000) then paints above the popover. */
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content[data-width] {
+  inline-size: var(--carbide-popover-width);
+  max-inline-size: calc(100vw - 2 * var(--carbide-sp-5));
+}
+
+.content[data-state='open'] {
+  animation: appear var(--carbide-duration-moderate-1) var(--carbide-ease-entrance);
+}
+
+.content[data-state='closed'] {
+  animation: disappear var(--carbide-duration-moderate-1) var(--carbide-ease-exit);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
+
+.arrowTip {
+  border-block-end: 1px solid var(--carbide-popover-border-color, var(--carbide-border-strong));
+  border-inline-end: 1px solid var(--carbide-popover-border-color, var(--carbide-border-strong));
+}

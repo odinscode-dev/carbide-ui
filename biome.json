@@ -1,0 +1,11 @@
+{
+  "extends": ["@odinscode/biome-config/biome.json"],
+  "files": {
+    "includes": [
+      "packages/*/src/**/*.ts",
+      "packages/*/src/**/*.tsx",
+      ".storybook/**/*.ts",
+      "vitest.config.ts"
+    ]
+  }
+}

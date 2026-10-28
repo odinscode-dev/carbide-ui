@@ -1,0 +1,50 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  min-height: var(--carbide-control-h);
+  color: var(--carbide-accent);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.root[data-status='finished'] {
+  color: var(--carbide-status-success-text);
+}
+
+.root[data-status='error'] {
+  color: var(--carbide-status-error-text);
+}
+
+.icon {
+  flex: none;
+  inline-size: calc(var(--carbide-control-h) / 2);
+  block-size: calc(var(--carbide-control-h) / 2);
+}
+
+.track {
+  stroke: var(--carbide-border-subtle);
+}
+
+.head {
+  stroke-dasharray: 10.2 30.6;
+  stroke-linecap: round;
+  transform-origin: center;
+  animation: spin calc(var(--carbide-duration-slow-2) * 1.5) linear infinite;
+}
+
+.mark {
+  stroke-width: 2;
+}
+
+.description {
+  color: var(--carbide-text-2);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

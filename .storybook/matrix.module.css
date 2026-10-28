@@ -1,0 +1,42 @@
+/* The grid of the matrix decorator. The only CSS that belongs to a story
+   rather than to a component. Tokens only, no fixed value.
+
+   Every cell carries its own theme and its own density -- that is why
+   background, border and font sit here inside the cell and not on the grid:
+   only there do they resolve to the respective set. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--carbide-border-subtle);
+  border: 1px solid var(--carbide-border-subtle);
+}
+
+.cell {
+  display: grid;
+  gap: var(--carbide-sp-4);
+  align-content: start;
+  padding: var(--carbide-sp-5);
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  font-stretch: var(--carbide-font-wdth);
+}
+
+.caption {
+  margin: 0;
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+}
+
+/* The stage of the story. Keeps several elements apart without giving them a
+   look of their own. */
+.stage {
+  display: grid;
+  gap: var(--carbide-sp-3);
+  justify-items: start;
+}

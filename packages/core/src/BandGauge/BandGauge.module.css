@@ -1,0 +1,99 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-1);
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-small);
+}
+
+.label {
+  color: var(--carbide-text-2);
+}
+
+.label[data-hidden],
+.meter {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.scale {
+  position: relative;
+  block-size: var(--carbide-sp-5);
+}
+
+.track {
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--carbide-sp-2);
+  overflow: hidden;
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-border-subtle);
+}
+
+.zone {
+  position: absolute;
+  inset-block: 0;
+}
+
+.zone[data-tone='alarm'] {
+  background: var(--carbide-signal-alarm);
+}
+
+.zone[data-tone='warning'] {
+  background: var(--carbide-signal-warning);
+}
+
+.zone[data-tone='ok'] {
+  background: var(--carbide-signal-ok);
+}
+
+.zone[data-tone='neutral'] {
+  background: var(--carbide-border-strong);
+}
+
+/* The reading: a solid bar across the track, framed so it reads on every zone colour. */
+.marker {
+  position: absolute;
+  inset-block: 0;
+  inline-size: var(--carbide-sp-1);
+  translate: -50% 0;
+  border: 1px solid var(--carbide-bg);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-text);
+}
+
+/* The second reading: hollow, below the track, so both stay readable when they meet. */
+.secondary {
+  position: absolute;
+  inset-block-end: 0;
+  inline-size: var(--carbide-sp-2);
+  block-size: var(--carbide-sp-2);
+  translate: -50% 50%;
+  box-sizing: border-box;
+  border: 1px solid var(--carbide-text);
+  border-radius: 50%;
+  background: var(--carbide-bg);
+}
+
+.ticks {
+  position: relative;
+  block-size: 1lh;
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tick {
+  position: absolute;
+  translate: -50% 0;
+  white-space: nowrap;
+}
+
+.root[data-empty] .track {
+  opacity: 0.4;
+}

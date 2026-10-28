@@ -1,0 +1,79 @@
+.sheet {
+  padding: var(--carbide-sp-5);
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+}
+
+.hint {
+  margin: 0 0 var(--carbide-sp-5);
+  max-width: 70ch;
+  color: var(--carbide-text-helper);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.themes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--carbide-sp-5);
+  align-items: start;
+}
+
+.theme {
+  padding: var(--carbide-sp-5);
+  border: 1px solid var(--carbide-border-subtle);
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+}
+
+.title {
+  margin: 0 0 var(--carbide-sp-4);
+  color: var(--carbide-text-2);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 6em repeat(7, 1fr);
+  gap: var(--carbide-sp-2) var(--carbide-sp-2);
+  align-items: center;
+  padding: var(--carbide-sp-4);
+  border: 1px solid var(--carbide-border-subtle);
+  background: var(--carbide-layer-1);
+}
+
+.head,
+.hue,
+.value {
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.head {
+  color: var(--carbide-text-helper);
+  text-align: center;
+}
+
+.hue {
+  color: var(--carbide-text-2);
+}
+
+.cell {
+  display: grid;
+  gap: var(--carbide-sp-1);
+  justify-items: center;
+}
+
+.swatch {
+  width: 100%;
+  height: var(--carbide-control-h);
+}
+
+.value {
+  color: var(--carbide-text-helper);
+}

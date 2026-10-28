@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  min-block-size: 0;
+  overflow: hidden;
+  background: var(--carbide-layer-1);
+  border: 1px solid var(--carbide-border-subtle);
+}
+
+.body {
+  flex: 1 1 auto;
+  min-block-size: 0;
+  overflow: hidden;
+  padding: var(--carbide-sp-4);
+}

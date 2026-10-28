@@ -1,0 +1,42 @@
+.positioner {
+  --z-index: var(--carbide-z-floating);
+  --arrow-size: var(--carbide-sp-3);
+  --arrow-background: var(--carbide-inverse-bg);
+}
+
+.content {
+  box-sizing: border-box;
+
+  max-inline-size: 18rem;
+  padding-block: var(--carbide-sp-3);
+  padding-inline: var(--carbide-sp-4);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-inverse-bg);
+  color: var(--carbide-inverse-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  line-height: 1.4;
+
+  z-index: var(--carbide-z-floating);
+}
+
+.content[data-state='open'] {
+  animation: appear var(--carbide-duration-fast-2) var(--carbide-ease-entrance);
+}
+
+.content[data-state='closed'] {
+  animation: disappear var(--carbide-duration-fast-2) var(--carbide-ease-exit);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}

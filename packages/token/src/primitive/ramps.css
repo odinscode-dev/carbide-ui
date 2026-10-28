@@ -1,0 +1,90 @@
+/*
+ * Nine tonal ramps, one set of values for both themes: the step is a
+ * lightness, 300 light to 900 dark, and 600 is the hue's main color — the
+ * one a status, an icon or a chart series shows at full strength. Values
+ * from Cloudscape's system palette (cloudscape-design/components,
+ * style-dictionary/core/palette-values.ts, Apache-2.0), steps 300–900 of
+ * its 50–1000 scale: the tints 50–200 and the near-blacks 950–1000 are
+ * left out. `orange` takes Cloudscape's Amber (its Orange is a red-orange
+ * that collides with red); `blue-2` (indigo, hue 275) and `pink` (hue 350)
+ * don't exist there and are Blue and Red rotated in OKLCH at the same
+ * lightness and chroma, clamped to sRGB.
+ *
+ * Which step a role takes per theme is the roles' business (semantic/):
+ * light themes read 600 on white, dark themes read 400–500 on gray-900.
+ * Components never touch a ramp step.
+ */
+:root {
+
+  --carbide-red-300: #ff9e9e;
+  --carbide-red-400: #ff7a7a;
+  --carbide-red-500: #ff3d3d;
+  --carbide-red-600: #db0000;
+  --carbide-red-700: #c20000;
+  --carbide-red-800: #990000;
+  --carbide-red-900: #700000;
+
+  --carbide-orange-300: #ffbb45;
+  --carbide-orange-400: #ff9900;
+  --carbide-orange-500: #fa6f00;
+  --carbide-orange-600: #d14600;
+  --carbide-orange-700: #9e3700;
+  --carbide-orange-800: #7a2b00;
+  --carbide-orange-900: #5c1b00;
+
+  --carbide-yellow-300: #ffed4d;
+  --carbide-yellow-400: #ffe347;
+  --carbide-yellow-500: #fbd332;
+  --carbide-yellow-600: #f2b100;
+  --carbide-yellow-700: #db9200;
+  --carbide-yellow-800: #9e6900;
+  --carbide-yellow-900: #855900;
+
+  --carbide-green-300: #62ff57;
+  --carbide-green-400: #00e500;
+  --carbide-green-500: #2bb534;
+  --carbide-green-600: #00802f;
+  --carbide-green-700: #007029;
+  --carbide-green-800: #005c26;
+  --carbide-green-900: #00471e;
+
+  --carbide-teal-300: #00f5e4;
+  --carbide-teal-400: #00d6c8;
+  --carbide-teal-500: #00ada2;
+  --carbide-teal-600: #008077;
+  --carbide-teal-700: #00665f;
+  --carbide-teal-800: #00524c;
+  --carbide-teal-900: #003d39;
+
+  --carbide-blue-1-300: #75cfff;
+  --carbide-blue-1-400: #42b4ff;
+  --carbide-blue-1-500: #0099ff;
+  --carbide-blue-1-600: #006ce0;
+  --carbide-blue-1-700: #004a9e;
+  --carbide-blue-1-800: #003b8f;
+  --carbide-blue-1-900: #002b66;
+
+  --carbide-blue-2-300: #b1bfff;
+  --carbide-blue-2-400: #92a2fe;
+  --carbide-blue-2-500: #7887ff;
+  --carbide-blue-2-600: #555ee1;
+  --carbide-blue-2-700: #3a409e;
+  --carbide-blue-2-800: #2f328f;
+  --carbide-blue-2-900: #212466;
+
+  --carbide-purple-300: #d4a8ff;
+  --carbide-purple-400: #bf80ff;
+  --carbide-purple-500: #ad5cff;
+  --carbide-purple-600: #962eff;
+  --carbide-purple-700: #7300e5;
+  --carbide-purple-800: #5900b2;
+  --carbide-purple-900: #45008a;
+
+  --carbide-pink-300: #f69ec7;
+  --carbide-pink-400: #f37ab7;
+  --carbide-pink-500: #ef3fa5;
+  --carbide-pink-600: #cc0a87;
+  --carbide-pink-700: #b50877;
+  --carbide-pink-800: #8e055d;
+  --carbide-pink-900: #680242;
+}

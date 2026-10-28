@@ -1,0 +1,151 @@
+/* One stylesheet for the whole symbol set: every colour is a token, every
+   line has one of the widths below (pipe 6, contour and detail 2). */
+.symbol {
+  display: block;
+  width: 96px;
+  height: 96px;
+  overflow: visible;
+}
+
+.pipe {
+  fill: none;
+  stroke: var(--carbide-border-strong);
+  stroke-width: 6px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+.conductor {
+  fill: none;
+  stroke: var(--carbide-text);
+  stroke-width: 2px;
+  stroke-dasharray: 6 4;
+  stroke-linecap: butt;
+}
+
+.body {
+  fill: var(--carbide-layer-2);
+  stroke: var(--carbide-text);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+}
+
+.bodyFill {
+  fill: var(--carbide-layer-2);
+  stroke: none;
+}
+
+.contour {
+  fill: none;
+  stroke: var(--carbide-text);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+}
+
+.detail {
+  fill: none;
+  stroke: var(--carbide-text);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+}
+
+.solid {
+  fill: var(--carbide-text);
+  stroke: var(--carbide-text);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+.passage {
+  fill: var(--carbide-border-strong);
+  stroke: var(--carbide-text);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+.level {
+  fill: var(--carbide-chart-series-1);
+}
+
+.liquid {
+  fill: var(--carbide-chart-series-1);
+  stroke: none;
+}
+
+.jet {
+  fill: none;
+  stroke: var(--carbide-chart-series-1);
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.label {
+  fill: var(--carbide-text);
+  font-family: var(--carbide-font-mono);
+  font-weight: 500;
+}
+
+.state {
+  fill: var(--carbide-state, var(--carbide-border-strong));
+  stroke: none;
+}
+
+.ring {
+  fill: none;
+  stroke: var(--carbide-state, var(--carbide-border-strong));
+  stroke-width: 2px;
+}
+
+/* The state point's colour, by state name. The names of the families agree
+   where they overlap (stopped, warning, alarm, fault, ok), so one table
+   serves pumps, containers, displays, drives and relief valves. */
+.symbol[data-state='stopped'],
+.symbol[data-state='closed'],
+.symbol[data-state='locked'] {
+  --carbide-state: var(--carbide-border-strong);
+}
+
+.symbol[data-state='running'],
+.symbol[data-state='ok'],
+.symbol[data-state='open'],
+.symbol[data-state='full'] {
+  --carbide-state: var(--carbide-status-success-border);
+}
+
+.symbol[data-state='warning'],
+.symbol[data-state='moving'],
+.symbol[data-state='empty'] {
+  --carbide-state: var(--carbide-status-warn-border);
+}
+
+.symbol[data-state='alarm'],
+.symbol[data-state='overfilled'] {
+  --carbide-state: var(--carbide-status-error-border);
+}
+
+.symbol[data-state='fault'] {
+  --carbide-state: var(--carbide-status-critical-border);
+}
+
+.symbol[data-state='fillable'] {
+  --carbide-state: var(--carbide-status-info-border);
+}
+
+/* A running centrifugal pump spins its impeller: a confirmed exception to
+   "no infinite loops except loading indicators and running physics". */
+.impeller {
+  transform-origin: 48px 48px;
+}
+
+.symbol[data-state='running'] .impeller {
+  animation: spin calc(var(--carbide-duration-slow-2) * 3) linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

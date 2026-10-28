@@ -1,0 +1,45 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  min-block-size: 0;
+  overflow: hidden;
+  background: var(--carbide-layer-1);
+  border: 1px solid var(--carbide-border-subtle);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.bar {
+  block-size: 3px;
+  flex: none;
+}
+
+.root[data-state='info'] .bar {
+  background: var(--carbide-status-info-border);
+}
+
+.root[data-state='success'] .bar {
+  background: var(--carbide-status-success-border);
+}
+
+.root[data-state='warn'] .bar {
+  background: var(--carbide-status-warn-border);
+}
+
+.root[data-state='critical'] .bar {
+  background: var(--carbide-status-critical-border);
+}
+
+.root[data-state='error'] .bar {
+  background: var(--carbide-status-error-border);
+}
+
+.body {
+  flex: 1 1 auto;
+  min-block-size: 0;
+  overflow: hidden;
+  padding: var(--carbide-sp-4);
+}

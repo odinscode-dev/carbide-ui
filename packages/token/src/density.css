@@ -1,0 +1,53 @@
+:root {
+
+  --carbide-sp-1: 2px;
+  --carbide-sp-2: 4px;
+  --carbide-sp-3: 8px;
+  --carbide-sp-4: 12px;
+  --carbide-sp-5: 16px;
+  --carbide-sp-6: 24px;
+  --carbide-sp-7: 32px;
+  --carbide-sp-8: 48px;
+  --carbide-sp-9: 64px;
+  --carbide-sp-10: 80px;
+}
+
+:root,
+[data-density='compact'] {
+  --carbide-font-body: 14px;
+  --carbide-fs-body: var(--carbide-font-body);
+  --carbide-control-h: 32px;
+  --carbide-row-h: 32px;
+  --carbide-gutter: 16px;
+  --carbide-touch-min: 0;
+  --carbide-radius: 0;
+  --carbide-radius-surface: var(--carbide-radius);
+  --carbide-radius-control: var(--carbide-radius);
+}
+
+[data-density='dense'] {
+  --carbide-font-body: 13px;
+  --carbide-fs-body: var(--carbide-font-body);
+  --carbide-tracking-body: 0.005em;
+  --carbide-tracking-small: 0.015em;
+  --carbide-tracking-label: 0.025em;
+  --carbide-control-h: 28px;
+  --carbide-row-h: 24px;
+  --carbide-gutter: 8px;
+  --carbide-touch-min: 0;
+  --carbide-radius: 0;
+  --carbide-radius-surface: var(--carbide-radius);
+  --carbide-radius-control: var(--carbide-radius);
+}
+
+[data-density='large'] {
+  --carbide-font-body: 16px;
+  --carbide-fs-body: var(--carbide-font-body);
+  --carbide-control-h: 44px;
+  --carbide-row-h: 48px;
+  --carbide-gutter: 24px;
+  --carbide-touch-min: 44px;
+  --carbide-radius: 2px;
+  --carbide-radius-surface: var(--carbide-radius);
+  --carbide-radius-control: var(--carbide-radius);
+}

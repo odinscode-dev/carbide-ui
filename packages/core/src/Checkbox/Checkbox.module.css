@@ -1,0 +1,86 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  min-height: var(--carbide-control-h);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  cursor: pointer;
+  user-select: none;
+}
+
+.control {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+  border: 1px solid var(--carbide-border-strong);
+  border-radius: var(--carbide-radius);
+  background: none;
+  color: var(--carbide-inverse-text);
+  transition:
+    background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard),
+    border-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.root:hover .control {
+  border-color: var(--carbide-text);
+}
+
+.indicator {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.glyph {
+  inline-size: 100%;
+  block-size: 100%;
+  transform: translateY(-0.5px);
+}
+
+.label {
+  cursor: inherit;
+}
+
+.root[data-state='checked'] .control,
+.root[data-state='indeterminate'] .control {
+  border-color: var(--carbide-accent);
+  background: var(--carbide-accent);
+}
+
+.root[data-invalid] .control {
+  border-color: var(--carbide-status-error-border);
+}
+
+.root[data-invalid][data-state='checked'] .control,
+.root[data-invalid][data-state='indeterminate'] .control {
+  background: var(--carbide-status-error-border);
+  color: var(--carbide-on-signal);
+}
+
+.root[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.root[data-disabled] .control,
+.root[data-disabled]:hover .control {
+  border-color: var(--carbide-border-subtle);
+  background: none;
+  color: var(--carbide-text-placeholder);
+}
+
+.root[data-disabled][data-state='checked'] .control,
+.root[data-disabled][data-state='indeterminate'] .control {
+  background: var(--carbide-layer-3);
+}
+
+.hiddenInput {
+  cursor: inherit;
+}

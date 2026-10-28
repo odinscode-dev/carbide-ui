@@ -1,0 +1,63 @@
+/*
+ * Depth. `elevated` lifts floating parts (menus, popovers) off the page.
+ * `raised` is for surfaces that stay in the page but stand out of it
+ * (instrument tiles): a surface running from `raised-top` to
+ * `raised-bottom`, a lighter `rim` along its top edge and a two-layer
+ * shadow, stronger under the pointer. `inset` is the opposite, a field
+ * sunk into a surface (sparklines, meters, time lines); `track` is the
+ * empty part of such a field. `glow` is how strongly a coloured value
+ * shines on its surface, as a share for color-mix.
+ */
+:root,
+[data-theme='light'] {
+  --carbide-shadow-elevated: 0 4px 16px color-mix(in oklab, var(--carbide-gray-1000) 20%, transparent);
+  --carbide-shadow-raised:
+    0 1px 2px color-mix(in oklab, var(--carbide-gray-1000) 10%, transparent),
+    0 6px 16px color-mix(in oklab, var(--carbide-gray-1000) 10%, transparent);
+  --carbide-shadow-raised-hover:
+    0 2px 4px color-mix(in oklab, var(--carbide-gray-1000) 12%, transparent),
+    0 14px 32px color-mix(in oklab, var(--carbide-gray-1000) 18%, transparent);
+  --carbide-raised-top: var(--carbide-layer-1);
+  --carbide-raised-bottom: color-mix(in oklab, var(--carbide-layer-1) 96%, var(--carbide-gray-300));
+  --carbide-rim: color-mix(in oklab, var(--carbide-gray-0) 70%, transparent);
+  --carbide-inset: color-mix(in oklab, var(--carbide-gray-1000) 5%, var(--carbide-layer-1));
+  --carbide-shadow-inset: inset 0 1px 3px color-mix(in oklab, var(--carbide-gray-1000) 12%, transparent);
+  --carbide-track: color-mix(in oklab, var(--carbide-gray-1000) 10%, transparent);
+  --carbide-glow: 35%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --carbide-shadow-elevated: 0 4px 16px color-mix(in oklab, var(--carbide-gray-1000) 60%, transparent);
+    --carbide-shadow-raised:
+      0 1px 2px color-mix(in oklab, var(--carbide-gray-1000) 50%, transparent),
+      0 8px 20px color-mix(in oklab, var(--carbide-gray-1000) 45%, transparent);
+    --carbide-shadow-raised-hover:
+      0 2px 4px color-mix(in oklab, var(--carbide-gray-1000) 55%, transparent),
+      0 18px 40px color-mix(in oklab, var(--carbide-gray-1000) 60%, transparent);
+    --carbide-raised-top: color-mix(in oklab, var(--carbide-layer-1) 92%, var(--carbide-gray-0));
+    --carbide-raised-bottom: color-mix(in oklab, var(--carbide-layer-1) 92%, var(--carbide-gray-1000));
+    --carbide-rim: color-mix(in oklab, var(--carbide-gray-0) 9%, transparent);
+    --carbide-inset: color-mix(in oklab, var(--carbide-gray-1000) 22%, var(--carbide-layer-1));
+    --carbide-shadow-inset: inset 0 1px 3px color-mix(in oklab, var(--carbide-gray-1000) 50%, transparent);
+    --carbide-track: color-mix(in oklab, var(--carbide-gray-0) 9%, transparent);
+    --carbide-glow: 50%;
+  }
+}
+
+[data-theme='dark'] {
+  --carbide-shadow-elevated: 0 4px 16px color-mix(in oklab, var(--carbide-gray-1000) 60%, transparent);
+  --carbide-shadow-raised:
+    0 1px 2px color-mix(in oklab, var(--carbide-gray-1000) 50%, transparent),
+    0 8px 20px color-mix(in oklab, var(--carbide-gray-1000) 45%, transparent);
+  --carbide-shadow-raised-hover:
+    0 2px 4px color-mix(in oklab, var(--carbide-gray-1000) 55%, transparent),
+    0 18px 40px color-mix(in oklab, var(--carbide-gray-1000) 60%, transparent);
+  --carbide-raised-top: color-mix(in oklab, var(--carbide-layer-1) 92%, var(--carbide-gray-0));
+  --carbide-raised-bottom: color-mix(in oklab, var(--carbide-layer-1) 92%, var(--carbide-gray-1000));
+  --carbide-rim: color-mix(in oklab, var(--carbide-gray-0) 9%, transparent);
+  --carbide-inset: color-mix(in oklab, var(--carbide-gray-1000) 22%, var(--carbide-layer-1));
+  --carbide-shadow-inset: inset 0 1px 3px color-mix(in oklab, var(--carbide-gray-1000) 50%, transparent);
+  --carbide-track: color-mix(in oklab, var(--carbide-gray-0) 9%, transparent);
+  --carbide-glow: 50%;
+}

@@ -1,0 +1,71 @@
+.sheet {
+  padding: var(--carbide-sp-5);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+}
+
+.panel {
+  margin-bottom: var(--carbide-sp-7);
+}
+
+.title {
+  margin: 0 0 var(--carbide-sp-3);
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-caps);
+  text-transform: uppercase;
+}
+
+.hint {
+  margin: 0 0 var(--carbide-sp-4);
+  max-width: 60ch;
+  color: var(--carbide-text-helper);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.grid {
+  display: grid;
+  gap: var(--carbide-sp-3) var(--carbide-sp-5);
+  align-items: baseline;
+}
+
+.weights {
+  grid-template-columns: 8em 1fr;
+}
+
+.weightsMono {
+  grid-template-columns: 8em 1fr 1fr;
+}
+
+.sizes {
+  grid-template-columns: 14em 5em 1fr;
+}
+
+.head {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+}
+
+.name {
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-small);
+}
+
+.mono {
+  font-family: var(--carbide-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.display {
+  font-family: var(--carbide-font-display);
+}
+
+.zero {
+  font-size: var(--carbide-fs-h2);
+}

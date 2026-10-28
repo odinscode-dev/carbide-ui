@@ -1,0 +1,43 @@
+.root {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--carbide-sp-2);
+  box-sizing: border-box;
+  block-size: calc(var(--carbide-sp-6) + var(--carbide-sp-2));
+  padding-inline: var(--carbide-sp-2) var(--carbide-sp-3);
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-inset);
+  box-shadow: var(--carbide-shadow-inset);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-label);
+  white-space: nowrap;
+}
+
+.value {
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-small);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.caption {
+  color: var(--carbide-text-helper);
+}
+
+.root[data-tone='success'] {
+  border-color: var(--carbide-status-success-border);
+  background: var(--carbide-status-success-bg);
+}
+
+.root[data-tone='warn'] {
+  border-color: var(--carbide-status-warn-border);
+  background: var(--carbide-status-warn-bg);
+}
+
+.root[data-tone='error'] {
+  border-color: var(--carbide-status-error-border);
+  background: var(--carbide-status-error-bg);
+}

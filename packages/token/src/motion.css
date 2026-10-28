@@ -1,0 +1,30 @@
+:root {
+
+  --carbide-z-hidden: -1;
+  --carbide-z-header: 8000;
+  --carbide-z-overlay: 8000;
+  --carbide-z-modal: 9000;
+  --carbide-z-dropdown: 9100;
+  --carbide-z-floating: 10000;
+
+  --carbide-duration-fast-1: 70ms;
+  --carbide-duration-fast-2: 110ms;
+  --carbide-duration-moderate-1: 150ms;
+  --carbide-duration-moderate-2: 240ms;
+  --carbide-duration-slow-1: 400ms;
+  --carbide-duration-slow-2: 700ms;
+  --carbide-ease-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
+  --carbide-ease-entrance: cubic-bezier(0, 0, 0.38, 0.9);
+  --carbide-ease-exit: cubic-bezier(0.2, 0, 1, 0.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --carbide-duration-fast-1: 0ms;
+    --carbide-duration-fast-2: 0ms;
+    --carbide-duration-moderate-1: 0ms;
+    --carbide-duration-moderate-2: 0ms;
+    --carbide-duration-slow-1: 0ms;
+    --carbide-duration-slow-2: 0ms;
+  }
+}

@@ -1,0 +1,12 @@
+/* The frame of the test bed, not part of the package: without it every story
+   sits on Storybook's white background, and a theme switch would stay
+   invisible. Tokens only, no fixed value. */
+body {
+  margin: 0;
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  font-stretch: var(--carbide-font-wdth);
+  letter-spacing: var(--carbide-tracking-small);
+}

@@ -1,0 +1,112 @@
+.root {
+  display: grid;
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.list {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+  min-block-size: var(--carbide-tabs-list-size, auto);
+  border-block-end: 1px solid var(--carbide-border-subtle);
+}
+
+/* Glass: a pane is framed on all four sides and rounded, where the plain
+   strip only draws the block-end rule — on a pane that single edge reads as
+   a missing frame. `border-style`/`border-width` and not the `border`
+   shorthand: the shorthand would reset the pane's own `border-color` back
+   to `currentcolor`. The inline padding keeps the first and last trigger
+   off the frame. */
+.list[data-variant='glass'] {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--carbide-radius);
+  padding-inline: var(--carbide-sp-4);
+}
+
+.trigger {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-4);
+  border: 0;
+  background: none;
+  color: var(--carbide-text-2);
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.trigger:hover {
+  color: var(--carbide-text);
+}
+
+.trigger[data-selected] {
+  color: var(--carbide-text);
+}
+
+.trigger[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}
+
+.icon > * {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.indicator {
+  position: absolute;
+  inset-block-end: 0;
+  inline-size: var(--width);
+  block-size: var(--carbide-sp-1);
+  background: var(--carbide-accent);
+}
+
+.content {
+  padding-block-start: var(--carbide-sp-5);
+}
+
+/* Fill: the root takes its parent's height, the strip keeps its own and the
+   selected panel gets the rest, scrolling in its own ScrollArea. The panel
+   is a flex column so that ScrollArea can fill it; `hidden` has to win over
+   that display for the panels that are not selected. The panel's top gap
+   moves inside the scrolled body, so the strip's rule stays flush with the
+   first line when scrolled. */
+.root[data-layout='fill'] {
+  grid-template-rows: auto minmax(0, 1fr);
+  block-size: 100%;
+  min-block-size: 0;
+}
+
+.root[data-layout='fill'] .content {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 0;
+  padding-block-start: 0;
+}
+
+.root[data-layout='fill'] .content[hidden] {
+  display: none;
+}
+
+.fillBody {
+  padding-block-start: var(--carbide-sp-5);
+}

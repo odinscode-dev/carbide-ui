@@ -1,0 +1,50 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-end: var(--carbide-sp-3);
+  block-size: 1lh;
+  vertical-align: top;
+}
+
+.icon svg {
+  inline-size: var(--carbide-sp-6);
+  block-size: var(--carbide-sp-6);
+}
+
+[data-role='confirm'] .icon,
+[data-role='info'] .icon {
+  color: var(--carbide-status-info-text);
+}
+
+[data-role='warning'] .icon {
+  color: var(--carbide-status-warn-text);
+}
+
+[data-role='critical'] .icon {
+  color: var(--carbide-status-critical-text);
+}
+
+[data-role='error'] .icon {
+  color: var(--carbide-status-error-text);
+}
+
+.message {
+  margin: 0;
+}
+
+[data-role='confirm'] > header {
+  border-block-end: 0;
+}
+
+[data-role='confirm'] > footer {
+  border-block-start: 0;
+}
+
+[data-role='confirm'] .message {
+  font-size: var(--carbide-fs-lead);
+  text-align: center;
+}
+
+[data-role='confirm'] > footer > * {
+  flex: 0 1 auto;
+}

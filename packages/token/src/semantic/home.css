@@ -1,0 +1,85 @@
+/*
+ * The home surface. `HomeShell surface="home"` writes `data-surface="home"`
+ * on its root, and everything below reads it: a flat, light ground, round
+ * cards with a one-pixel edge and no shadow, round controls. Nothing here
+ * applies without the attribute, so every other app looks as before.
+ *
+ * The palette is a green-tinted neutral. It replaces the gray roles from
+ * `color.css` (ground, layers, edge, text) on the surface root; components
+ * keep reading the same role names and pick the new values up by
+ * inheritance.
+ *
+ * The radii split the one `--carbide-radius` of `density.css`:
+ * `--carbide-radius-surface` for cards, sheets and popups,
+ * `--carbide-radius-control` for buttons, fields and nav entries.
+ * `--carbide-radius` itself stays small for checkbox, tag and badge, which
+ * would look bent at 12 px. Fields are an underline with rounded top
+ * corners in Carbon; here they become a full box (`--carbide-field-border-width`,
+ * `--carbide-field-radius-end`, which the field components read with the
+ * Carbon values as their fallback). `--carbide-home-radius-inner` is the inner card
+ * (a card inside a card); components in an app read it directly.
+ *
+ * `HomeShell` writes the attribute on its root and on the document element,
+ * because overlays render under <body>, and an app sets `data-theme` on the
+ * document element too. The palette is therefore declared where the theme
+ * lives -- the document element, or any element that carries its own
+ * `data-theme` -- and an inner root that has only `data-surface` declares
+ * nothing and inherits. If it redeclared the light values it would paint
+ * over the document element's dark theme. The radii do not depend on the
+ * theme, so they sit on every surface element.
+ *
+ * This file comes after `density.css` on purpose: the surface and a density
+ * attribute sit on the same element with the same specificity, so the later
+ * block wins. Like `glass.css`, every theme block repeats its values rather
+ * than inheriting them from another block.
+ */
+[data-surface='home'] {
+  --carbide-radius: 4px;
+  --carbide-radius-surface: 18px;
+  --carbide-radius-control: 12px;
+  --carbide-home-radius-inner: 14px;
+  --carbide-field-border-width: 1px;
+  --carbide-field-radius-end: var(--carbide-radius-control);
+}
+
+:root[data-surface='home'],
+[data-surface='home'][data-theme='light'] {
+  --carbide-bg: #eef2ec;
+  --carbide-layer-1: #ffffff;
+  --carbide-layer-2: #f6f8f4;
+  --carbide-layer-3: #ffffff;
+  --carbide-field: #f6f8f4;
+  --carbide-border-subtle: #dfe5dd;
+  --carbide-text: #1d2823;
+  --carbide-text-2: #5a6a60;
+  --carbide-text-helper: #5a6a60;
+  --carbide-text-placeholder: #8a978f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-surface='home']:not([data-theme='light']) {
+    --carbide-bg: #14181a;
+    --carbide-layer-1: #1e2426;
+    --carbide-layer-2: #242b2d;
+    --carbide-layer-3: #1e2426;
+    --carbide-field: #242b2d;
+    --carbide-border-subtle: #2f383b;
+    --carbide-text: #eef2ec;
+    --carbide-text-2: #a9b4ad;
+    --carbide-text-helper: #a9b4ad;
+    --carbide-text-placeholder: #7d8983;
+  }
+}
+
+[data-surface='home'][data-theme='dark'] {
+  --carbide-bg: #14181a;
+  --carbide-layer-1: #1e2426;
+  --carbide-layer-2: #242b2d;
+  --carbide-layer-3: #1e2426;
+  --carbide-field: #242b2d;
+  --carbide-border-subtle: #2f383b;
+  --carbide-text: #eef2ec;
+  --carbide-text-2: #a9b4ad;
+  --carbide-text-helper: #a9b4ad;
+  --carbide-text-placeholder: #7d8983;
+}

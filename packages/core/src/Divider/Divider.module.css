@@ -1,0 +1,29 @@
+.root {
+  flex: none;
+  margin: 0;
+  border: 0;
+  background: var(--carbide-border-subtle);
+}
+
+.root[data-variant='error'] {
+  background: var(--carbide-status-error-border);
+}
+
+.root[data-variant='warning'] {
+  background: var(--carbide-status-warn-border);
+}
+
+.root[data-variant='success'] {
+  background: var(--carbide-status-success-border);
+}
+
+.root[data-orientation='horizontal'] {
+  width: 100%;
+  height: 1px;
+}
+
+.root[data-orientation='vertical'] {
+  align-self: stretch;
+  width: 1px;
+  height: auto;
+}

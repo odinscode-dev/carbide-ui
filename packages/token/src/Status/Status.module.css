@@ -1,0 +1,79 @@
+.sheet {
+  padding: var(--carbide-sp-5);
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+}
+
+.hint {
+  margin: 0 0 var(--carbide-sp-5);
+  max-width: 70ch;
+  color: var(--carbide-text-helper);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.themes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--carbide-sp-5);
+  align-items: start;
+}
+
+.theme {
+  display: grid;
+  gap: var(--carbide-sp-3);
+  padding: var(--carbide-sp-5);
+  border: 1px solid var(--carbide-border-subtle);
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+}
+
+.title {
+  margin: 0 0 var(--carbide-sp-2);
+  color: var(--carbide-text-2);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+}
+
+.stage {
+  display: grid;
+  gap: var(--carbide-sp-3);
+  padding: var(--carbide-sp-4);
+  border: 1px solid var(--carbide-border-subtle);
+  background: var(--carbide-layer-1);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: var(--carbide-sp-2) var(--carbide-sp-4);
+  align-items: baseline;
+  padding: var(--carbide-sp-4);
+  border: 1px solid;
+  border-radius: var(--carbide-radius);
+}
+
+.name {
+  font-weight: 600;
+}
+
+.sample {
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.values {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--carbide-sp-1) var(--carbide-sp-3);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.role {
+  color: var(--carbide-text-helper);
+}

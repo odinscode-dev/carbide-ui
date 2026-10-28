@@ -1,0 +1,37 @@
+.root {
+  color: var(--carbide-accent-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.root:not([data-inline]) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--carbide-sp-1);
+}
+
+.root[data-inline] {
+  text-decoration: underline;
+}
+
+.root:hover {
+  text-decoration: underline;
+}
+
+.root[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  inline-size: 1em;
+  block-size: 1em;
+}
+
+.icon > * {
+  inline-size: 100%;
+  block-size: 100%;
+}

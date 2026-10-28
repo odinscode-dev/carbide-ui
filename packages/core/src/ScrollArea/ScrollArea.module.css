@@ -1,0 +1,68 @@
+.root {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 0;
+  contain: inline-size;
+}
+
+.viewport {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  min-block-size: 0;
+  scrollbar-width: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.root[data-disabled] .viewport {
+  overflow: hidden;
+}
+
+.scrollbarVertical {
+  inline-size: var(--carbide-sp-3);
+  padding-inline: var(--carbide-sp-1);
+}
+
+.scrollbarHorizontal {
+  block-size: var(--carbide-sp-3);
+  padding-block: var(--carbide-sp-1);
+}
+
+.thumbVertical,
+.thumbHorizontal {
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-border-strong);
+  opacity: 0;
+  transition: opacity var(--carbide-duration-moderate-1) var(--carbide-ease-standard);
+}
+
+.thumbVertical {
+  inline-size: 100%;
+}
+
+.thumbHorizontal {
+  block-size: 100%;
+}
+
+/*
+ * Gated on `data-has-overflow` (set by ScrollArea.tsx from its own
+ * ResizeObserver measurement) rather than on zag-js's `hiddenState`:
+ * that state's `scrollbarYHidden`/`scrollbarXHidden` can stay stuck at
+ * their `false` default even once content fits, which showed a hover
+ * thumb with nothing to scroll.
+ */
+.root:hover .scrollbarVertical[data-has-overflow] .thumbVertical,
+.root:hover .scrollbarHorizontal[data-has-overflow] .thumbHorizontal,
+.scrollbarVertical[data-has-overflow][data-scrolling] .thumbVertical,
+.scrollbarHorizontal[data-has-overflow][data-scrolling] .thumbHorizontal,
+.thumbVertical[data-dragging],
+.thumbHorizontal[data-dragging] {
+  opacity: 1;
+}

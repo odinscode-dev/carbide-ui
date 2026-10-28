@@ -1,0 +1,193 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-2);
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.label {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+}
+
+.root[data-disabled] .label {
+  color: var(--carbide-text-placeholder);
+}
+
+.control {
+  display: grid;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  inline-size: 100%;
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-4);
+  border: solid var(--carbide-border-strong);
+  border-width: var(--carbide-field-border-width, 0 0 1px);
+  border-radius: var(--carbide-radius-control) var(--carbide-radius-control)
+    var(--carbide-field-radius-end, 0) var(--carbide-field-radius-end, 0);
+  background: var(--carbide-field);
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.trigger:enabled:hover {
+  background: var(--carbide-layer-2);
+}
+
+.value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trigger[data-placeholder-shown] .value {
+  color: var(--carbide-text-placeholder);
+}
+
+.indicator {
+  display: inline-flex;
+  flex: none;
+  color: var(--carbide-text-2);
+  transition: transform var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.trigger[data-state='open'] .indicator {
+  transform: rotate(180deg);
+}
+
+.glyph {
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}
+
+.root[data-invalid] .trigger {
+  border-color: var(--carbide-status-error-border);
+}
+
+.trigger:disabled {
+  border-color: transparent;
+  background: var(--carbide-layer-2);
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.trigger:disabled .indicator,
+.trigger:disabled .value {
+  color: var(--carbide-text-placeholder);
+}
+
+.positioner {
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content {
+  box-sizing: border-box;
+  max-block-size: calc(8 * var(--carbide-row-h));
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--carbide-border-strong) transparent;
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius-control);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  /* @zag-js/popper reads this element's *computed* z-index and copies it
+     onto the positioner's `--z-index` the first time it positions the
+     list (get-placement.mjs) — see AvatarMenu.module.css. Without a real
+     z-index here, that copy makes the positioner "auto" too, and a host
+     page's modal (carbide-z-modal: 9000) then paints above the list. */
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content[hidden] {
+  display: none;
+}
+
+.content[data-state='open'] {
+  animation: unfold var(--carbide-duration-moderate-1) var(--carbide-ease-entrance);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  block-size: var(--carbide-row-h);
+  padding-inline: var(--carbide-sp-4);
+  cursor: pointer;
+}
+
+.itemText {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item[data-highlighted] {
+  background: var(--carbide-layer-2);
+}
+
+.item[data-state='checked'] {
+  color: var(--carbide-accent-text);
+}
+
+.itemDivider {
+  margin-block: var(--carbide-sp-2);
+}
+
+.itemIndicator {
+  display: inline-flex;
+  flex: none;
+}
+
+.itemIndicator[hidden] {
+  display: none;
+}
+
+.item[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  block-size: var(--carbide-row-h);
+  padding-inline: var(--carbide-sp-4);
+  color: var(--carbide-text-helper);
+}
+
+@keyframes unfold {
+  from {
+    transform: translateY(calc(-1 * var(--carbide-sp-2)));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

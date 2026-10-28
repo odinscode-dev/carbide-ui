@@ -1,0 +1,114 @@
+/* Title zone 64px and header 72px (64 + 8, between two spacing steps), then
+   the tabs: their strip is the 48px tab band, their panel the rest. */
+.root {
+  display: grid;
+  grid-template-rows: var(--carbide-sp-9) calc(var(--carbide-sp-9) + var(--carbide-sp-3)) minmax(0, 1fr);
+  flex: 1 1 auto;
+  min-block-size: 0;
+}
+
+.titleZone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--carbide-sp-5);
+  min-inline-size: 0;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--carbide-sp-1);
+  min-inline-size: 0;
+}
+
+.breadcrumb {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-small);
+}
+
+.titleLine {
+  display: flex;
+  align-items: center;
+  gap: var(--carbide-sp-4);
+  min-inline-size: 0;
+}
+
+.title {
+  margin: 0;
+  min-inline-size: 0;
+  overflow: hidden;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-display);
+  font-size: var(--carbide-fs-h3);
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  flex: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  flex: none;
+}
+
+/* The key facts in one row, label above value, separated by hairlines. */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  min-inline-size: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--carbide-border-subtle);
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--carbide-sp-2);
+  min-inline-size: 0;
+  padding-inline: var(--carbide-sp-6);
+  border-inline-start: 1px solid var(--carbide-border-subtle);
+}
+
+/* The first fact (the departments) may be long; it takes what is left and
+   cuts short, the others keep their width. */
+.fact:first-child {
+  flex: 0 1 auto;
+  padding-inline-start: 0;
+  border-inline-start: 0;
+}
+
+.fact:not(:first-child) {
+  flex: none;
+}
+
+.factLabel {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-small);
+}
+
+.factValue {
+  margin: 0;
+  overflow: hidden;
+  color: var(--carbide-text);
+  font-size: var(--carbide-fs-body);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 0;
+  --carbide-tabs-list-size: var(--carbide-sp-8);
+}

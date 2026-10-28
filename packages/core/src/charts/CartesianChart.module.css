@@ -1,0 +1,12 @@
+/* A zoomable chart: the zoom buttons above the plot, the plot below taking the
+   height the chart is given. */
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--carbide-sp-2);
+}
+
+.chart {
+  flex: 1 1 auto;
+  min-block-size: 0;
+}

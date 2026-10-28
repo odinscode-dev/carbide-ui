@@ -1,0 +1,7 @@
+:root {
+  --carbide-bp-sm: 320px;
+  --carbide-bp-md: 672px;
+  --carbide-bp-lg: 1056px;
+  --carbide-bp-xlg: 1312px;
+  --carbide-bp-max: 1584px;
+}

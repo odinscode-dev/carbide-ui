@@ -1,0 +1,76 @@
+/*
+ * The glass pane. A pane is a blurred sheet over a photo or another
+ * background image: a nearly opaque fill, a translucent edge, a light rim
+ * along the top edge, and a soft drop shadow that lifts it off the
+ * background. Only the fill and the edge are translucent — everything drawn
+ * inside a pane stays on its own opaque tokens, so text and numbers keep
+ * their contrast.
+ *
+ * Every value a pane needs lives here rather than in the component that
+ * draws it, for the same reason `elevation.css` owns the elevated shadow:
+ * the light and dark versions are different mixes, not the same mix over
+ * flipped tokens, and a component module cannot express that without a
+ * `prefers-color-scheme` block of its own — which would then miss the
+ * Storybook matrix, where `data-theme` sits on a section rather than on
+ * `:root` (Ticket #5). @odinscode/carbide-core's `glass/glass.module.css` only reads
+ * these.
+ *
+ * Dark inverts the problem, not the recipe: it is the photo's highlights
+ * that wash a pane out, not its shadows, so the backdrop is pulled down
+ * instead of lifted, the rim is a whisper rather than a line, and the
+ * shadow does the lifting on its own.
+ *
+ * `--carbide-glass-rim-base` and `--carbide-glass-shadow-base` are the two
+ * anchors an app can retint; they are deliberately absolute rather than
+ * theme-flipped — the rim is always the near-white end of the gray ramp and
+ * the shadow always the near-black one, in both themes. The mixes
+ * themselves (fill, edge, rim, shadow, blur) are the finer knobs, and
+ * `--carbide-glass-glow` is empty by default and takes a third shadow layer
+ * for a pane that has to carry an accent color.
+ *
+ * Every block repeats the two anchors rather than inheriting them from
+ * `:root`: a custom property that reads another one is substituted on the
+ * element it is declared on, so a value declared only on `:root` would hand
+ * a `[data-theme]` section the root's colors.
+ */
+:root,
+[data-theme='light'] {
+  --carbide-glass-rim-base: var(--carbide-gray-0);
+  --carbide-glass-shadow-base: var(--carbide-gray-1000);
+
+  --carbide-glass-fill: color-mix(in oklab, var(--carbide-layer-1) 93%, transparent);
+  --carbide-glass-edge: color-mix(in oklab, var(--carbide-text) 22%, transparent);
+  --carbide-glass-rim: color-mix(in oklab, var(--carbide-glass-rim-base) 80%, transparent);
+  --carbide-glass-shadow:
+    0 1px 2px color-mix(in oklab, var(--carbide-glass-shadow-base) 12%, transparent),
+    0 12px 32px color-mix(in oklab, var(--carbide-glass-shadow-base) 18%, transparent);
+  --carbide-glass-blur: blur(28px) saturate(0.6) brightness(1.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --carbide-glass-rim-base: var(--carbide-gray-0);
+    --carbide-glass-shadow-base: var(--carbide-gray-1000);
+
+    --carbide-glass-fill: color-mix(in oklab, var(--carbide-layer-1) 84%, transparent);
+    --carbide-glass-edge: color-mix(in oklab, var(--carbide-text) 16%, transparent);
+    --carbide-glass-rim: color-mix(in oklab, var(--carbide-glass-rim-base) 7%, transparent);
+    --carbide-glass-shadow:
+      0 1px 2px color-mix(in oklab, var(--carbide-glass-shadow-base) 40%, transparent),
+      0 14px 36px color-mix(in oklab, var(--carbide-glass-shadow-base) 55%, transparent);
+    --carbide-glass-blur: blur(24px) saturate(0.6) brightness(0.8);
+  }
+}
+
+[data-theme='dark'] {
+  --carbide-glass-rim-base: var(--carbide-gray-0);
+  --carbide-glass-shadow-base: var(--carbide-gray-1000);
+
+  --carbide-glass-fill: color-mix(in oklab, var(--carbide-layer-1) 84%, transparent);
+  --carbide-glass-edge: color-mix(in oklab, var(--carbide-text) 16%, transparent);
+  --carbide-glass-rim: color-mix(in oklab, var(--carbide-glass-rim-base) 7%, transparent);
+  --carbide-glass-shadow:
+    0 1px 2px color-mix(in oklab, var(--carbide-glass-shadow-base) 40%, transparent),
+    0 14px 36px color-mix(in oklab, var(--carbide-glass-shadow-base) 55%, transparent);
+  --carbide-glass-blur: blur(24px) saturate(0.6) brightness(0.8);
+}

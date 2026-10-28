@@ -1,0 +1,62 @@
+{
+  "name": "@odinscode/carbide-core",
+  "version": "0.35.2",
+  "description": "Carbide UI components for React: forms, dialogs, navigation, a data grid and charts, in light and dark and three densities",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/copy-css.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@ark-ui/react": "^5.30.0",
+    "@odinscode/carbide-token": "workspace:*",
+    "@tanstack/react-table": "^8.21.0",
+    "@tanstack/react-virtual": "^3.13.0",
+    "recharts": "^3.2.0",
+    "refractor": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  },
+  "devDependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "keywords": [
+    "carbide-ui",
+    "react",
+    "components",
+    "design-system",
+    "data-grid",
+    "charts"
+  ],
+  "author": "Vitali Wottschel",
+  "homepage": "https://showcase.growdog.tech/carbide-ui/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odinscode-dev/carbide-ui.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/odinscode-dev/carbide-ui/issues"
+  }
+}

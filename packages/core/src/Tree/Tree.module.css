@@ -1,0 +1,98 @@
+.root {
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  height: var(--carbide-row-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline-start: calc(var(--carbide-sp-3) + (var(--depth) - 1) * var(--carbide-sp-5));
+  padding-inline-end: var(--carbide-sp-3);
+  border-inline-start: var(--carbide-sp-2) solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.row:hover {
+  background: var(--carbide-layer-2);
+}
+
+.row:focus-visible {
+  background: var(--carbide-accent-soft);
+}
+
+.row[data-selected] {
+  border-inline-start-color: var(--carbide-accent);
+  background: var(--carbide-accent-soft);
+}
+
+.row[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.row[data-disabled]:hover {
+  background: none;
+}
+
+.indicator {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+  color: var(--carbide-text-2);
+}
+
+.row[data-disabled] .indicator {
+  color: inherit;
+}
+
+.chevron {
+  inline-size: 100%;
+  block-size: 100%;
+  transition: transform var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.indicator[data-state='open'] .chevron {
+  transform: rotate(90deg);
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}
+
+.icon > * {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--carbide-row-h);
+  margin: 0;
+  padding-inline: var(--carbide-sp-5);
+  color: var(--carbide-text-helper);
+}

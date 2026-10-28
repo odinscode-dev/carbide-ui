@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  block-size: 100dvh;
+  overflow: hidden;
+  background: var(--carbide-bg);
+}
+
+.scroll {
+  flex: 1 1 auto;
+  min-block-size: 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  align-content: flex-start;
+  gap: var(--carbide-gutter);
+  padding: var(--carbide-gutter);
+}

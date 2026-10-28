@@ -1,0 +1,75 @@
+.root {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--carbide-sp-4);
+  box-sizing: border-box;
+  block-size: var(--carbide-sp-10);
+  padding-inline: var(--carbide-sp-7);
+  background: var(--carbide-layer-1);
+  border-block-end: 1px solid var(--carbide-border-subtle);
+  position: relative;
+  z-index: var(--carbide-z-header);
+}
+
+.titles {
+  display: flex;
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--carbide-sp-1);
+}
+
+/* With a status the title block has a width of its own, whatever its text: a
+   block that shrank to its content moved the divider and the status with every
+   page. A longer title or context line is cut with an ellipsis. */
+.root[data-status] .titles {
+  flex: 0 0 var(--carbide-shell-titles-size, 16rem);
+}
+
+.status {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  align-self: stretch;
+  min-inline-size: 0;
+  margin-inline-start: var(--carbide-sp-3);
+  padding-inline-start: var(--carbide-sp-4);
+  border-inline-start: 1px solid var(--carbide-border-subtle);
+}
+
+.title {
+  overflow: hidden;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-display);
+  font-size: var(--carbide-fs-h3);
+  font-weight: 600;
+  letter-spacing: var(--carbide-tracking-heading);
+  line-height: 1.3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.context {
+  overflow: hidden;
+  color: var(--carbide-text-2);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+  line-height: 1.3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+}
+
+.menuIcon {
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}

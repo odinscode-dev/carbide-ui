@@ -1,0 +1,21 @@
+.root {
+  --carbide-minibars-color: var(--carbide-accent);
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  box-sizing: border-box;
+  block-size: 100%;
+  min-block-size: var(--carbide-sp-5);
+}
+
+.bar {
+  flex: 1 1 0;
+  min-block-size: 1px;
+  background: var(--carbide-minibars-color);
+}
+
+/* An empty slot stays visible as a stub of track. */
+.bar[data-empty] {
+  min-block-size: var(--carbide-sp-1);
+  background: var(--carbide-track);
+}

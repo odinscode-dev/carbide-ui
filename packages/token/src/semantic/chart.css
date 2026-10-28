@@ -1,0 +1,81 @@
+:root,
+[data-theme='light'] {
+  --carbide-chart-grid: var(--carbide-border-subtle);
+  --carbide-chart-axis: var(--carbide-border-strong);
+  --carbide-chart-axis-text: var(--carbide-text-2);
+  --carbide-chart-series: var(--carbide-chart-series-1);
+  --carbide-chart-area-alpha: 0.12;
+  --carbide-chart-ref-line: var(--carbide-accent-text);
+  --carbide-chart-ref-area-alpha: 0.08;
+  --carbide-chart-tooltip-bg: var(--carbide-inverse-bg);
+  --carbide-chart-tooltip-text: var(--carbide-inverse-text);
+
+  --carbide-chart-series-1: oklch(0.60 0.14 245);
+  --carbide-chart-series-2: oklch(0.66 0.16 55);
+  --carbide-chart-series-3: oklch(0.60 0.17 350);
+  --carbide-chart-series-4: oklch(0.72 0.14 92);
+  --carbide-chart-series-5: oklch(0.50 0.16 300);
+  --carbide-chart-series-6: oklch(0.55 0.15 140);
+
+  --carbide-chart-threshold-negative: #db0000;
+  --carbide-chart-threshold-positive: #00802f;
+  --carbide-chart-threshold-info: #006ce0;
+  --carbide-chart-threshold-neutral: #656871;
+
+  --carbide-chart-errorbar-1: var(--carbide-blue-2-300);
+  --carbide-chart-errorbar-2: var(--carbide-pink-300);
+  --carbide-chart-errorbar-3: var(--carbide-teal-300);
+  --carbide-chart-errorbar-4: var(--carbide-purple-300);
+  --carbide-chart-errorbar-5: var(--carbide-orange-300);
+  --carbide-chart-errorbar-6: var(--carbide-blue-2-400);
+  --carbide-chart-errorbar-7: var(--carbide-pink-400);
+  --carbide-chart-errorbar-8: var(--carbide-teal-400);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --carbide-chart-series-1: oklch(0.66 0.13 245);
+    --carbide-chart-series-2: oklch(0.64 0.15 55);
+    --carbide-chart-series-3: oklch(0.64 0.15 350);
+    --carbide-chart-series-4: oklch(0.67 0.14 92);
+    --carbide-chart-series-5: oklch(0.62 0.14 300);
+    --carbide-chart-series-6: oklch(0.60 0.15 140);
+
+    --carbide-chart-threshold-negative: #ff7a7a;
+    --carbide-chart-threshold-positive: #2bb534;
+    --carbide-chart-threshold-info: #75cfff;
+    --carbide-chart-threshold-neutral: #a4a4ad;
+
+    --carbide-chart-errorbar-1: var(--carbide-blue-2-700);
+    --carbide-chart-errorbar-2: var(--carbide-pink-700);
+    --carbide-chart-errorbar-3: var(--carbide-teal-700);
+    --carbide-chart-errorbar-4: var(--carbide-purple-700);
+    --carbide-chart-errorbar-5: var(--carbide-orange-700);
+    --carbide-chart-errorbar-6: var(--carbide-blue-2-600);
+    --carbide-chart-errorbar-7: var(--carbide-pink-600);
+    --carbide-chart-errorbar-8: var(--carbide-teal-600);
+  }
+}
+
+[data-theme='dark'] {
+  --carbide-chart-series-1: oklch(0.66 0.13 245);
+  --carbide-chart-series-2: oklch(0.64 0.15 55);
+  --carbide-chart-series-3: oklch(0.64 0.15 350);
+  --carbide-chart-series-4: oklch(0.67 0.14 92);
+  --carbide-chart-series-5: oklch(0.62 0.14 300);
+  --carbide-chart-series-6: oklch(0.60 0.15 140);
+
+  --carbide-chart-threshold-negative: #ff7a7a;
+  --carbide-chart-threshold-positive: #2bb534;
+  --carbide-chart-threshold-info: #75cfff;
+  --carbide-chart-threshold-neutral: #a4a4ad;
+
+  --carbide-chart-errorbar-1: var(--carbide-blue-2-700);
+  --carbide-chart-errorbar-2: var(--carbide-pink-700);
+  --carbide-chart-errorbar-3: var(--carbide-teal-700);
+  --carbide-chart-errorbar-4: var(--carbide-purple-700);
+  --carbide-chart-errorbar-5: var(--carbide-orange-700);
+  --carbide-chart-errorbar-6: var(--carbide-blue-2-600);
+  --carbide-chart-errorbar-7: var(--carbide-pink-600);
+  --carbide-chart-errorbar-8: var(--carbide-teal-600);
+}

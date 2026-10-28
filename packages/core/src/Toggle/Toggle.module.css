@@ -1,0 +1,110 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  min-height: var(--carbide-control-h);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  cursor: pointer;
+  user-select: none;
+}
+
+.root[data-label-position='end'],
+.root[data-label-position='end'] .field {
+  flex-direction: row-reverse;
+}
+
+.label {
+  cursor: inherit;
+}
+
+.field {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+}
+
+/* The rail: a square track that scales with the density's control height. */
+.control {
+  --size: calc(var(--carbide-control-h) * 0.625);
+  --width: calc(var(--size) * 2);
+  --thumb: calc(var(--size) - 2 * var(--carbide-sp-1) - 2px);
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  box-sizing: border-box;
+  inline-size: var(--width);
+  block-size: var(--size);
+  padding: var(--carbide-sp-1);
+  border: 1px solid var(--carbide-border-strong);
+  border-radius: var(--carbide-radius-control);
+  background: var(--carbide-inset);
+  box-shadow: var(--carbide-shadow-inset);
+  transition:
+    background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard),
+    border-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.control[data-focus-visible] {
+  outline: 2px solid var(--carbide-accent);
+  outline-offset: 2px;
+}
+
+.root:hover .control {
+  border-color: var(--carbide-text);
+}
+
+.thumb {
+  inline-size: var(--thumb);
+  block-size: var(--thumb);
+  border-radius: var(--carbide-radius-control);
+  background: var(--carbide-text-2);
+  transition:
+    transform var(--carbide-duration-fast-1) var(--carbide-ease-standard),
+    background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.root[data-state='checked'] .control {
+  border-color: var(--carbide-accent);
+  background: var(--carbide-accent);
+  box-shadow: none;
+}
+
+.root[data-state='checked'] .thumb {
+  background: var(--carbide-on-signal);
+  transform: translateX(calc(var(--width) - var(--thumb) - 2 * var(--carbide-sp-1) - 2px));
+}
+
+.state {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-small);
+  white-space: nowrap;
+}
+
+.root[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.root[data-disabled] .control,
+.root[data-disabled]:hover .control {
+  border-color: var(--carbide-border-subtle);
+  background: none;
+  box-shadow: none;
+}
+
+.root[data-disabled] .thumb {
+  background: var(--carbide-border-subtle);
+}
+
+.root[data-disabled] .state {
+  color: inherit;
+}
+
+.hiddenInput {
+  cursor: inherit;
+}

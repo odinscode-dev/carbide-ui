@@ -1,0 +1,8 @@
+.root {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: var(--carbide-sp-4);
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-layer-1);
+}

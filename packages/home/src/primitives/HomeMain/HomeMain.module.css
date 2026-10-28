@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  block-size: 100%;
+  min-block-size: 0;
+  min-inline-size: 0;
+  background: var(--carbide-bg);
+}
+
+.scroll {
+  flex: 1 1 auto;
+  min-block-size: 0;
+}
+
+.content {
+  box-sizing: border-box;
+  min-block-size: 100%;
+  padding: var(--carbide-gutter);
+  display: flex;
+  flex-direction: column;
+  gap: var(--carbide-gutter);
+}

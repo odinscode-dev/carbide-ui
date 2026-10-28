@@ -1,0 +1,58 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  block-size: var(--carbide-control-h);
+  border-radius: var(--carbide-radius);
+  background: color-mix(in oklab, var(--carbide-text) 12%, var(--carbide-layer-1));
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-small);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+  white-space: nowrap;
+}
+
+.root:not([data-image]) {
+  min-inline-size: var(--carbide-control-h);
+  padding-inline: var(--carbide-sp-3);
+}
+
+.root[data-image] {
+  inline-size: var(--carbide-control-h);
+}
+
+.root[data-role='admin'] {
+  background: var(--carbide-status-error-bg);
+  color: var(--carbide-status-error-text);
+}
+
+.root[data-role='client'] {
+  background: var(--carbide-accent-soft);
+  color: var(--carbide-accent-text);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-inline-size: 12rem;
+}
+
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

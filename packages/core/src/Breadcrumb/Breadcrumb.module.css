@@ -1,0 +1,112 @@
+.root {
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.item:not(:last-child)::after {
+  content: '/';
+  padding-inline: var(--carbide-sp-3);
+  color: var(--carbide-text-placeholder);
+}
+
+.current {
+  overflow: hidden;
+  color: var(--carbide-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  block-size: var(--carbide-control-h);
+  min-block-size: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-2);
+  border: 0;
+  background: none;
+  color: var(--carbide-accent-text);
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+.positioner {
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content {
+  box-sizing: border-box;
+  max-block-size: calc(8 * var(--carbide-row-h));
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--carbide-border-strong) transparent;
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  /* @zag-js/popper reads this element's *computed* z-index and copies it
+     onto the positioner's `--z-index` the first time it positions the
+     menu (get-placement.mjs) — see AvatarMenu.module.css. Without a real
+     z-index here, that copy makes the positioner "auto" too, and a host
+     page's modal (carbide-z-modal: 9000) then paints above the menu. */
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content[hidden] {
+  display: none;
+}
+
+.content[data-state='open'] {
+  animation: unfold var(--carbide-duration-moderate-1) var(--carbide-ease-entrance);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  block-size: var(--carbide-row-h);
+  padding-inline: var(--carbide-sp-4);
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.menuItem[data-highlighted] {
+  background: var(--carbide-layer-2);
+}
+
+@keyframes unfold {
+  from {
+    transform: translateY(calc(-1 * var(--carbide-sp-2)));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

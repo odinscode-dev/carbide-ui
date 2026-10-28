@@ -1,0 +1,68 @@
+.root {
+  --carbide-field-tabbar-h: 72px;
+  flex: none;
+  block-size: var(--carbide-field-tabbar-h);
+  background: var(--carbide-layer-1);
+  border-block-start: 1px solid var(--carbide-border-subtle);
+  position: relative;
+  z-index: var(--carbide-z-header);
+}
+
+.list {
+  display: flex;
+  block-size: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--carbide-sp-1);
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: 100%;
+  min-inline-size: var(--carbide-touch-min);
+  min-block-size: var(--carbide-touch-min);
+  padding: var(--carbide-sp-2);
+  border: 0;
+  background: none;
+  color: var(--carbide-text-2);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+  cursor: pointer;
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.tab:hover {
+  background: var(--carbide-layer-2);
+}
+
+.tab[data-active] {
+  color: var(--carbide-accent-text);
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--carbide-sp-6);
+  block-size: var(--carbide-sp-6);
+}
+
+.label {
+  overflow: hidden;
+  max-inline-size: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

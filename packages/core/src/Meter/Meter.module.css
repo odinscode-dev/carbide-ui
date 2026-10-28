@@ -1,0 +1,39 @@
+.root {
+  --carbide-meter-color: var(--carbide-accent);
+  position: relative;
+  box-sizing: border-box;
+  block-size: var(--carbide-sp-3);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-track);
+  box-shadow: var(--carbide-shadow-inset);
+}
+
+.meter {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.fill {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  border-radius: var(--carbide-radius);
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--carbide-meter-color) 70%, var(--carbide-gray-1000)),
+    var(--carbide-meter-color)
+  );
+  box-shadow: 0 0 var(--carbide-sp-3) color-mix(in oklab, var(--carbide-meter-color) var(--carbide-glow), transparent);
+  transition: inline-size var(--carbide-duration-slow-1) var(--carbide-ease-standard);
+}
+
+.mark {
+  position: absolute;
+  inset-block: calc(-1 * var(--carbide-sp-1));
+  inline-size: var(--carbide-sp-1);
+  translate: -50% 0;
+  background: var(--carbide-text);
+}

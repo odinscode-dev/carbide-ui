@@ -1,0 +1,52 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  padding: var(--carbide-sp-1);
+  border: 1px solid var(--carbide-border-strong);
+  border-radius: var(--carbide-radius-control);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.indicator {
+  --transition-duration: var(--carbide-duration-fast-1);
+  position: absolute;
+  inset-block: var(--carbide-sp-1);
+  inline-size: var(--width);
+  border-radius: var(--carbide-radius-control);
+  background: var(--carbide-accent);
+}
+
+.item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-4);
+  color: var(--carbide-text-2);
+  cursor: pointer;
+  transition: color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.item:hover {
+  color: var(--carbide-text);
+}
+
+.item[data-state='checked'] {
+  color: var(--carbide-inverse-text);
+}
+
+.item[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.item[data-disabled]:hover {
+  color: var(--carbide-text-placeholder);
+}

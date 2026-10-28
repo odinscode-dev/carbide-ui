@@ -1,0 +1,24 @@
+.root {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: auto;
+  gap: var(--carbide-gutter);
+}
+
+.item {
+  grid-column: 1 / -1;
+  min-inline-size: 0;
+  min-block-size: 0;
+}
+
+/* 1056px = --carbide-bp-lg (packages/token/src/breakpoint.css); var() doesn't resolve in @media, so literal */
+@media (min-width: 1056px) {
+  .root {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .item {
+    grid-column: span var(--carbide-dashboard-item-column-span, 1);
+    grid-row: span var(--carbide-dashboard-item-row-span, 1);
+  }
+}

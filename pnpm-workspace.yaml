@@ -1,0 +1,21 @@
+# Ab pnpm 11 liegen hier die Projekteinstellungen, nicht mehr in package.json.
+packages:
+  - "packages/*"
+
+# Build-Skripte laufen nur für ausdrücklich freigegebene Pakete.
+allowBuilds:
+  esbuild: true
+  # Bringt Storybook mit:
+  "@swc/core": true
+  msw: true
+  # postinstall ist IBM-Telemetrie (ibmtelemetry), fuer #40 als devDependency
+  # von @odinscode/carbide-icons-scada dazugekommen -- bewusst nicht freigegeben.
+  "@carbon/icon-helpers": false
+  "@carbon/icons-react": false
+
+minimumReleaseAgeExclude:
+  # Our own packages are used right after we publish them.
+  - "@odinscode/*"
+  - react-dom@19.3.0
+  - react@19.3.0
+  - scheduler@0.28.0

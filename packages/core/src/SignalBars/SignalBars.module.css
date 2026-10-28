@@ -1,0 +1,37 @@
+.root {
+  display: inline-flex;
+  flex: none;
+  align-items: flex-end;
+  gap: 1px;
+  block-size: var(--carbide-sp-4);
+  vertical-align: middle;
+}
+
+.bar {
+  inline-size: var(--carbide-sp-1);
+  background: var(--carbide-track);
+}
+
+.bar:nth-child(1) {
+  block-size: 40%;
+}
+
+.bar:nth-child(2) {
+  block-size: 60%;
+}
+
+.bar:nth-child(3) {
+  block-size: 80%;
+}
+
+.bar:nth-child(4) {
+  block-size: 100%;
+}
+
+.bar[data-lit] {
+  background: var(--carbide-signal-ok);
+}
+
+.root[data-level='1'] .bar[data-lit] {
+  background: var(--carbide-signal-warning);
+}

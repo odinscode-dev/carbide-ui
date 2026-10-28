@@ -1,0 +1,96 @@
+.trigger {
+  display: inline-flex;
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.positioner {
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content {
+  /*
+   * @zag-js/popper re-reads this element's *computed* z-index and copies it
+   * onto the positioner's `--z-index` the first time it positions the menu
+   * (get-placement.mjs) — overwriting the .positioner rule above. Without a
+   * real z-index here too, that computed value is "auto" (nothing else on
+   * this element sets one), and the copy makes the positioner "auto" as
+   * well, regardless of the rule above. A host page's own positioned,
+   * z-indexed header (BoardShell's, for one) then paints above the menu.
+   */
+  z-index: var(--carbide-z-dropdown);
+  box-sizing: border-box;
+  overflow: hidden;
+  min-inline-size: 12rem;
+  padding-block: var(--carbide-sp-2);
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.content[hidden] {
+  display: none;
+}
+
+.content[data-state='open'] {
+  animation: unfold var(--carbide-duration-moderate-1) var(--carbide-ease-entrance);
+}
+
+.accountLabel {
+  display: block;
+  overflow: hidden;
+  padding-inline: var(--carbide-sp-4);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.separator {
+  margin-block: var(--carbide-sp-2);
+  border: 0;
+  border-block-start: 1px solid var(--carbide-border-subtle);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  block-size: var(--carbide-row-h);
+  padding-inline: var(--carbide-sp-4);
+  cursor: pointer;
+}
+
+.item[data-highlighted] {
+  background: var(--carbide-layer-2);
+}
+
+.item[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.item[data-danger] {
+  color: var(--carbide-status-error-text);
+}
+
+.item[data-danger][data-highlighted] {
+  background: var(--carbide-status-error-bg);
+}
+
+@keyframes unfold {
+  from {
+    transform: translateY(calc(-1 * var(--carbide-sp-2)));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

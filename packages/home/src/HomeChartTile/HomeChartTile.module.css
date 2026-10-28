@@ -1,0 +1,49 @@
+.root {
+  display: block;
+}
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  padding: var(--carbide-sp-7) var(--carbide-sp-5);
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius-surface);
+  background: var(--carbide-layer-1);
+  text-align: center;
+}
+
+.icon {
+  display: inline-flex;
+  color: var(--carbide-text-helper);
+}
+
+.title {
+  margin: 0;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-display);
+  font-size: var(--carbide-fs-h3);
+  font-weight: 500;
+}
+
+.text {
+  margin: 0;
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-body);
+}
+
+.chart {
+  display: none;
+}
+
+@media (orientation: landscape) {
+  .hint {
+    display: none;
+  }
+
+  .chart {
+    display: block;
+  }
+}

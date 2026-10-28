@@ -1,0 +1,92 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-4);
+
+  border: 1px solid transparent;
+  border-radius: var(--carbide-radius-control);
+  background: none;
+  color: inherit;
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-small);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--carbide-duration-fast-2) var(--carbide-ease-standard);
+}
+
+.root[data-icon-only] {
+  width: var(--carbide-control-h);
+  min-width: var(--carbide-touch-min);
+  padding-inline: 0;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.root[data-variant='primary'] {
+  background: var(--carbide-accent);
+  color: var(--carbide-inverse-text);
+}
+
+.root[data-variant='secondary'] {
+  border-color: var(--carbide-border-strong);
+  color: var(--carbide-accent-text);
+}
+
+.root[data-variant='ghost'] {
+  color: var(--carbide-accent-text);
+}
+
+.root[data-variant='danger'] {
+  background: var(--carbide-signal-alarm);
+  color: var(--carbide-on-signal);
+}
+
+.root[data-variant='primary']:enabled:hover {
+  background: color-mix(in oklab, var(--carbide-accent) 88%, var(--carbide-text));
+}
+
+.root[data-variant='secondary']:enabled:hover,
+.root[data-variant='ghost']:enabled:hover {
+  background: var(--carbide-accent-soft);
+}
+
+.root[data-variant='danger']:enabled:hover {
+  background: color-mix(in oklab, var(--carbide-signal-alarm) 88%, var(--carbide-text));
+}
+
+.root[data-variant='primary']:enabled:active {
+  background: color-mix(in oklab, var(--carbide-accent) 76%, var(--carbide-text));
+}
+
+.root[data-variant='secondary']:enabled:active,
+.root[data-variant='ghost']:enabled:active {
+  background: color-mix(in oklab, var(--carbide-accent) 32%, var(--carbide-layer-1));
+}
+
+.root[data-variant='danger']:enabled:active {
+  background: color-mix(in oklab, var(--carbide-signal-alarm) 76%, var(--carbide-text));
+}
+
+.root:disabled {
+  border-color: var(--carbide-border-subtle);
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.root[data-variant='primary']:disabled,
+.root[data-variant='danger']:disabled {
+  background: var(--carbide-layer-2);
+}

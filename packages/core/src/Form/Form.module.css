@@ -1,0 +1,8 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-5);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}

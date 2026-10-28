@@ -1,0 +1,73 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  padding: var(--carbide-sp-4) var(--carbide-sp-5);
+  border: 1px solid var(--carbide-border-strong);
+  border-radius: var(--carbide-radius-surface);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  line-height: 1.4;
+}
+
+.root[data-state='info'] {
+  background: var(--carbide-status-info-bg);
+  border-color: var(--carbide-status-info-border);
+  color: var(--carbide-status-info-text);
+}
+
+.root[data-state='success'] {
+  background: var(--carbide-status-success-bg);
+  border-color: var(--carbide-status-success-border);
+  color: var(--carbide-status-success-text);
+}
+
+.root[data-state='warn'] {
+  background: var(--carbide-status-warn-bg);
+  border-color: var(--carbide-status-warn-border);
+  color: var(--carbide-status-warn-text);
+}
+
+.root[data-state='critical'] {
+  background: var(--carbide-status-critical-bg);
+  border-color: var(--carbide-status-critical-border);
+  color: var(--carbide-status-critical-text);
+}
+
+.root[data-state='error'] {
+  background: var(--carbide-status-error-bg);
+  border-color: var(--carbide-status-error-border);
+  color: var(--carbide-status-error-text);
+}
+
+.icon {
+  flex: none;
+  inline-size: calc(var(--carbide-control-h) / 2);
+  block-size: calc(var(--carbide-control-h) / 2);
+}
+
+.body {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.message {
+  margin-block-start: var(--carbide-sp-1);
+}
+
+.title + .message {
+  margin-block-start: var(--carbide-sp-2);
+}
+
+.action {
+  flex: none;
+}

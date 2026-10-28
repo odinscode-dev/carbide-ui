@@ -1,0 +1,102 @@
+.positioner {
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content {
+  /* @zag-js/popper copies this element's computed z-index onto the
+     positioner; without a real value here it would end up "auto" -- see
+     AvatarMenu.module.css. */
+  z-index: var(--carbide-z-dropdown);
+  box-sizing: border-box;
+  overflow: hidden;
+  min-inline-size: 12rem;
+  padding-block: var(--carbide-sp-2);
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius-control);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  box-shadow: var(--carbide-shadow-elevated);
+}
+
+.content[hidden] {
+  display: none;
+}
+
+.content[data-state='open'] {
+  animation: unfold var(--carbide-duration-moderate-1) var(--carbide-ease-entrance);
+}
+
+.separator {
+  margin-block: var(--carbide-sp-2);
+  border: 0;
+  border-block-start: 1px solid var(--carbide-border-subtle);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--carbide-sp-4);
+  box-sizing: border-box;
+  block-size: var(--carbide-row-h);
+  padding-inline: var(--carbide-sp-4);
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-inline-size: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.item[data-highlighted] {
+  background: var(--carbide-layer-2);
+}
+
+.item[data-state='checked'] {
+  color: var(--carbide-accent-text);
+}
+
+.indicator {
+  display: inline-flex;
+  flex: none;
+}
+
+.indicator[hidden] {
+  display: none;
+}
+
+.glyph {
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}
+
+.item[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.item[data-danger] {
+  color: var(--carbide-status-error-text);
+}
+
+.item[data-danger][data-highlighted] {
+  background: var(--carbide-status-error-bg);
+}
+
+@keyframes unfold {
+  from {
+    transform: translateY(calc(-1 * var(--carbide-sp-2)));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

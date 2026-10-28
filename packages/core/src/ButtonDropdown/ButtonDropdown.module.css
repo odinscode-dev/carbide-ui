@@ -1,0 +1,169 @@
+.root {
+  display: inline-flex;
+  align-items: stretch;
+}
+
+.main,
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-4);
+  border: 1px solid transparent;
+  border-radius: var(--carbide-radius-control);
+  background: none;
+  color: inherit;
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-small);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--carbide-duration-fast-2) var(--carbide-ease-standard);
+}
+
+.trigger[data-icon-only] {
+  width: var(--carbide-control-h);
+  min-width: var(--carbide-touch-min);
+  padding-inline: 0;
+}
+
+.chevron {
+  flex: none;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}
+
+.root[data-variant='primary'] .main,
+.root[data-variant='primary'] .trigger {
+  background: var(--carbide-accent);
+  color: var(--carbide-inverse-text);
+}
+
+.root[data-variant='secondary'] .main,
+.root[data-variant='secondary'] .trigger {
+  border-color: var(--carbide-border-strong);
+  color: var(--carbide-accent-text);
+}
+
+.root[data-variant='ghost'] .main,
+.root[data-variant='ghost'] .trigger {
+  color: var(--carbide-accent-text);
+}
+
+.root[data-variant='primary'] .main:enabled:hover,
+.root[data-variant='primary'] .trigger:enabled:hover {
+  background: color-mix(in oklab, var(--carbide-accent) 88%, var(--carbide-text));
+}
+
+.root[data-variant='secondary'] .main:enabled:hover,
+.root[data-variant='secondary'] .trigger:enabled:hover,
+.root[data-variant='ghost'] .main:enabled:hover,
+.root[data-variant='ghost'] .trigger:enabled:hover {
+  background: var(--carbide-accent-soft);
+}
+
+.root[data-split] .main {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.root[data-split] .trigger {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  border-inline-start: 0;
+}
+
+.main:disabled,
+.trigger:disabled {
+  border-color: var(--carbide-border-subtle);
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.root[data-variant='primary'] .main:disabled,
+.root[data-variant='primary'] .trigger:disabled {
+  background: var(--carbide-layer-2);
+}
+
+.positioner {
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-block: var(--carbide-sp-2);
+  border: 1px solid var(--carbide-border-subtle);
+  border-radius: var(--carbide-radius-control);
+  background: var(--carbide-layer-1);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+  /* @zag-js/popper reads this element's *computed* z-index and copies it
+     onto the positioner's `--z-index` the first time it positions the
+     menu (get-placement.mjs) — see AvatarMenu.module.css. Without a real
+     z-index here, that copy makes the positioner "auto" too, and a host
+     page's modal (carbide-z-modal: 9000) then paints above the menu. */
+  z-index: var(--carbide-z-dropdown);
+}
+
+.content[hidden] {
+  display: none;
+}
+
+.content[data-state='open'] {
+  animation: unfold var(--carbide-duration-moderate-1) var(--carbide-ease-entrance);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  block-size: var(--carbide-row-h);
+  padding-inline: var(--carbide-sp-4);
+  cursor: pointer;
+}
+
+.item[data-highlighted] {
+  background: var(--carbide-layer-2);
+}
+
+.item[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.item[data-danger] {
+  color: var(--carbide-status-error-text);
+}
+
+.item[data-danger][data-highlighted] {
+  background: var(--carbide-status-error-bg);
+}
+
+.item[data-danger][data-disabled] {
+  color: var(--carbide-text-placeholder);
+}
+
+.separator {
+  margin-block: var(--carbide-sp-2);
+  border: 0;
+  border-block-start: 1px solid var(--carbide-border-subtle);
+}
+
+@keyframes unfold {
+  from {
+    transform: translateY(calc(-1 * var(--carbide-sp-2)));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

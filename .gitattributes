@@ -1,0 +1,9 @@
+# Internal working files: kept in this repository, left out of every
+# `git archive` export, which is how the public snapshot is made.
+CLAUDE.md export-ignore
+.claude export-ignore
+.forgejo export-ignore
+.vscode export-ignore
+.copier-answers.yml export-ignore
+scripts/deploy-showcase.sh export-ignore
+scripts/publish-github.sh export-ignore

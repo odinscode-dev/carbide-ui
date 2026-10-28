@@ -1,0 +1,15 @@
+.root {
+  display: grid;
+  flex: 1 1 auto;
+  min-block-size: 0;
+  box-sizing: border-box;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 16px;
+  padding: 16px;
+  inline-size: 100%;
+  /* Transparent on purpose: BoardShell.root paints the same color behind it
+     by default, and its optional background image otherwise -- painting an
+     opaque fill here would hide that image in the grid gaps. */
+  background: transparent;
+}

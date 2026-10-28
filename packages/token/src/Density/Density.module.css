@@ -1,0 +1,118 @@
+.sheet {
+  padding: var(--carbide-sp-5);
+  background: var(--carbide-bg);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+}
+
+.hint {
+  margin: 0 0 var(--carbide-sp-5);
+  max-width: 60ch;
+  color: var(--carbide-text-helper);
+  font-size: var(--carbide-fs-small);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.sets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--carbide-sp-5);
+  align-items: start;
+}
+
+.set {
+  padding: var(--carbide-sp-4);
+  border: 1px solid var(--carbide-border-subtle);
+  background: var(--carbide-layer-1);
+  font-size: var(--carbide-fs-body);
+}
+
+.title {
+  margin: 0 0 var(--carbide-sp-4);
+  color: var(--carbide-text-2);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--carbide-sp-2) var(--carbide-sp-3);
+  padding-bottom: var(--carbide-sp-4);
+  border-bottom: 1px solid var(--carbide-border-subtle);
+}
+
+.name {
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+}
+
+.value {
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.sample {
+  display: grid;
+  gap: var(--carbide-gutter);
+  padding-top: var(--carbide-sp-4);
+}
+
+.bar {
+  display: flex;
+  gap: var(--carbide-sp-3);
+}
+
+.field,
+.button {
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding: 0 var(--carbide-sp-4);
+  border-radius: var(--carbide-radius);
+  font-family: inherit;
+  font-size: var(--carbide-fs-body);
+}
+
+.field {
+  min-width: 0;
+  border: 1px solid var(--carbide-border-strong);
+  background: var(--carbide-field);
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.button {
+  border: 1px solid var(--carbide-border-strong);
+  background: var(--carbide-layer-2);
+  color: var(--carbide-accent-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--carbide-sp-3);
+  height: var(--carbide-row-h);
+  padding: 0 var(--carbide-sp-4);
+  border-bottom: 1px solid var(--carbide-border-subtle);
+}
+
+.measurement {
+  color: var(--carbide-text-2);
+  font-family: var(--carbide-font-mono);
+  font-variant-numeric: tabular-nums;
+}

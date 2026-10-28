@@ -1,0 +1,16 @@
+.track {
+  stroke: var(--carbide-border-subtle);
+}
+
+.head {
+  stroke-dasharray: 10.2 30.6;
+  stroke-linecap: round;
+  transform-origin: center;
+  animation: spin calc(var(--carbide-duration-slow-2) * 1.5) linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

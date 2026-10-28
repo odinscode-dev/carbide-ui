@@ -1,0 +1,17 @@
+{
+  "extends": "@odinscode/tsconfig/base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"]
+  },
+  "include": [
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "packages/*/src/**/*.stories.tsx",
+    "vitest.config.ts",
+    "test/**/*.ts",
+    "test/**/*.tsx"
+  ],
+  "exclude": ["node_modules", "dist", "dist-storybook"]
+}

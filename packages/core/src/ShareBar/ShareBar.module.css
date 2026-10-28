@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  box-sizing: border-box;
+  block-size: var(--carbide-sp-3);
+  overflow: hidden;
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-track);
+  box-shadow: var(--carbide-shadow-inset);
+}
+
+.part {
+  flex: none;
+  block-size: 100%;
+}
+
+.part + .part {
+  border-inline-start: 1px solid var(--carbide-inset);
+}

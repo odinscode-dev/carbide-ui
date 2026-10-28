@@ -1,0 +1,98 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.groupLabel {
+  color: var(--carbide-text-2);
+  font-size: var(--carbide-fs-label);
+  font-weight: 500;
+  letter-spacing: var(--carbide-tracking-label);
+}
+
+.root[data-disabled] .groupLabel {
+  color: var(--carbide-text-placeholder);
+}
+
+.options {
+  display: flex;
+  gap: var(--carbide-sp-3);
+}
+
+.root[data-orientation='vertical'] .options {
+  flex-direction: column;
+}
+
+.root[data-orientation='horizontal'] .options {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--carbide-sp-6);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  min-height: var(--carbide-touch-min);
+  cursor: pointer;
+  user-select: none;
+}
+
+.control {
+  display: inline-block;
+  flex: none;
+  box-sizing: border-box;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+  border: 1px solid var(--carbide-border-strong);
+  border-radius: 50%;
+  background: none;
+  transition:
+    border-color var(--carbide-duration-fast-1) var(--carbide-ease-standard),
+    border-width var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.item:hover .control {
+  border-color: var(--carbide-text);
+}
+
+.label {
+  cursor: inherit;
+}
+
+.item[data-state='checked'] .control {
+  border-width: 5px;
+  border-color: var(--carbide-accent);
+}
+
+.root[data-invalid] .control {
+  border-color: var(--carbide-status-error-border);
+}
+
+.root[data-invalid] .item[data-state='checked'] .control {
+  border-color: var(--carbide-status-error-border);
+}
+
+.item[data-disabled] {
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.item[data-disabled] .control,
+.item[data-disabled]:hover .control {
+  border-color: var(--carbide-border-subtle);
+}
+
+.item[data-disabled][data-state='checked'] .control {
+  border-color: var(--carbide-text-placeholder);
+}
+
+.hiddenInput {
+  cursor: inherit;
+}

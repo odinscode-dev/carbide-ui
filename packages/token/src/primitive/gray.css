@@ -1,0 +1,13 @@
+:root {
+  --carbide-gray-0: oklch(1 0 0);
+  --carbide-gray-100: oklch(0.9668 0.0058 264.5);
+  --carbide-gray-200: oklch(0.9081 0.0081 253.9);
+  --carbide-gray-300: oklch(0.8268 0.0107 248.0);
+  --carbide-gray-400: oklch(0.7314 0.0129 248.0);
+  --carbide-gray-500: oklch(0.6414 0.0152 258.4);
+  --carbide-gray-600: oklch(0.5416 0.0139 248.1);
+  --carbide-gray-700: oklch(0.4387 0.0113 243.0);
+  --carbide-gray-800: oklch(0.3447 0.0120 243.2);
+  --carbide-gray-900: oklch(0.2680 0.0103 229.3);
+  --carbide-gray-1000: oklch(0.1973 0.0087 240.4);
+}

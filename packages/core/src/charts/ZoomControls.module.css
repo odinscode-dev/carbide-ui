@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  flex: none;
+  align-items: center;
+  align-self: flex-end;
+  gap: var(--carbide-sp-1);
+}
+
+.glyph {
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+}

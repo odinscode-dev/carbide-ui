@@ -1,0 +1,109 @@
+.root {
+  display: grid;
+  box-sizing: border-box;
+  color: var(--carbide-text);
+  font-family: var(--carbide-font-sans);
+  font-size: var(--carbide-fs-body);
+  letter-spacing: var(--carbide-tracking-small);
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: var(--carbide-sp-3);
+  box-sizing: border-box;
+  min-inline-size: 0;
+  height: var(--carbide-control-h);
+  min-height: var(--carbide-touch-min);
+  padding-inline: var(--carbide-sp-4);
+  border: solid var(--carbide-border-strong);
+  border-width: var(--carbide-field-border-width, 0 0 1px);
+  border-radius: var(--carbide-radius-control) var(--carbide-radius-control)
+    var(--carbide-field-radius-end, 0) var(--carbide-field-radius-end, 0);
+  background: var(--carbide-field);
+  transition: background-color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.control:hover {
+  background: var(--carbide-layer-2);
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+  color: var(--carbide-text-2);
+}
+
+.glyph {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.input {
+  flex: 1 1 auto;
+  min-width: 0;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+.input::placeholder {
+  color: var(--carbide-text-placeholder);
+}
+
+.input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.clear {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  inline-size: var(--carbide-sp-5);
+  block-size: var(--carbide-sp-5);
+  padding: 0;
+  border: none;
+  border-radius: var(--carbide-radius-control);
+  background: none;
+  color: var(--carbide-text-2);
+  cursor: pointer;
+  transition: color var(--carbide-duration-fast-1) var(--carbide-ease-standard);
+}
+
+.clear:hover {
+  color: var(--carbide-text);
+}
+
+.root[data-disabled] .control {
+  border-color: transparent;
+  background: var(--carbide-layer-2);
+  color: var(--carbide-text-placeholder);
+  cursor: not-allowed;
+}
+
+.root[data-disabled] .control:hover {
+  background: var(--carbide-layer-2);
+}
+
+.root[data-disabled] .icon,
+.root[data-disabled] .clear {
+  color: inherit;
+}
+
+.root[data-disabled] .input,
+.root[data-disabled] .clear {
+  cursor: not-allowed;
+}

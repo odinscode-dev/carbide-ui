@@ -1,0 +1,61 @@
+.root {
+  display: grid;
+  gap: var(--carbide-sp-1);
+  box-sizing: border-box;
+  min-inline-size: 0;
+}
+
+.track {
+  position: relative;
+  block-size: var(--carbide-sp-4);
+  overflow: hidden;
+  border-radius: var(--carbide-radius);
+  background: var(--carbide-track);
+  box-shadow: var(--carbide-shadow-inset);
+}
+
+.range {
+  position: absolute;
+  inset-block: 0;
+  background: var(--carbide-accent);
+}
+
+.mark {
+  position: absolute;
+  inset-block: 0;
+  inline-size: 1px;
+  translate: -50% 0;
+  background: var(--carbide-text);
+}
+
+.now {
+  position: absolute;
+  inset-block: 0;
+  inline-size: var(--carbide-sp-1);
+  translate: -50% 0;
+  background: var(--carbide-text);
+  box-shadow: 0 0 var(--carbide-sp-2) var(--carbide-text);
+}
+
+.ticks {
+  position: relative;
+  block-size: 1lh;
+  color: var(--carbide-text-helper);
+  font-family: var(--carbide-font-mono);
+  font-size: var(--carbide-fs-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.tick {
+  position: absolute;
+  translate: -50% 0;
+  white-space: nowrap;
+}
+
+.tick[data-edge='start'] {
+  translate: 0 0;
+}
+
+.tick[data-edge='end'] {
+  translate: -100% 0;
+}

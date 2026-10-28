@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  min-block-size: 0;
+  background: var(--carbide-layer-1);
+  border-inline-start: 1px solid var(--carbide-border-subtle);
+}
+
+.scroll {
+  flex: 1 1 auto;
+  min-block-size: 0;
+}
+
+.content {
+  padding: var(--carbide-gutter);
+  display: flex;
+  flex-direction: column;
+  gap: var(--carbide-sp-5);
+}

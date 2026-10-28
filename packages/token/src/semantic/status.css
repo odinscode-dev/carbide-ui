@@ -1,0 +1,80 @@
+/*
+ * Five statuses, each a surface, a border and a text color. Border and
+ * icon take the hue's main step 600 on a light surface; text takes the
+ * same step where 600 reads at 4.5:1 on white (red 5.2, green 5.1, orange
+ * 4.6) and drops to 800 for yellow, which no pure yellow can do on white
+ * (600 is 1.9:1). Dark surfaces read the lighter steps: 400 for red,
+ * orange and yellow, 500 for green (400 is neon on gray-900). Contrast
+ * figures in decision/carbide-farbrampen-tonal.
+ */
+:root,
+[data-theme='light'] {
+
+  --carbide-status-info-bg: color-mix(in oklab, var(--carbide-accent) 10%, var(--carbide-layer-1));
+  --carbide-status-info-border: var(--carbide-accent);
+  --carbide-status-info-text: var(--carbide-accent-text);
+
+  --carbide-status-success-bg: color-mix(in oklab, var(--carbide-green-600) 10%, var(--carbide-layer-1));
+  --carbide-status-success-border: var(--carbide-green-600);
+  --carbide-status-success-text: var(--carbide-green-600);
+
+  --carbide-status-warn-bg: color-mix(in oklab, var(--carbide-yellow-600) 10%, var(--carbide-layer-1));
+  --carbide-status-warn-border: var(--carbide-yellow-600);
+  --carbide-status-warn-text: var(--carbide-yellow-800);
+
+  --carbide-status-critical-bg: color-mix(in oklab, var(--carbide-orange-600) 10%, var(--carbide-layer-1));
+  --carbide-status-critical-border: var(--carbide-orange-600);
+  --carbide-status-critical-text: var(--carbide-orange-600);
+
+  --carbide-status-error-bg: color-mix(in oklab, var(--carbide-red-600) 10%, var(--carbide-layer-1));
+  --carbide-status-error-border: var(--carbide-red-600);
+  --carbide-status-error-text: var(--carbide-red-600);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+
+    --carbide-status-info-bg: color-mix(in oklab, var(--carbide-accent) 16%, var(--carbide-layer-1));
+    --carbide-status-info-border: var(--carbide-accent);
+    --carbide-status-info-text: var(--carbide-accent-text);
+
+    --carbide-status-success-bg: color-mix(in oklab, var(--carbide-green-500) 16%, var(--carbide-layer-1));
+    --carbide-status-success-border: var(--carbide-green-500);
+    --carbide-status-success-text: var(--carbide-green-500);
+
+    --carbide-status-warn-bg: color-mix(in oklab, var(--carbide-yellow-400) 16%, var(--carbide-layer-1));
+    --carbide-status-warn-border: var(--carbide-yellow-400);
+    --carbide-status-warn-text: var(--carbide-yellow-400);
+
+    --carbide-status-critical-bg: color-mix(in oklab, var(--carbide-orange-400) 16%, var(--carbide-layer-1));
+    --carbide-status-critical-border: var(--carbide-orange-400);
+    --carbide-status-critical-text: var(--carbide-orange-400);
+
+    --carbide-status-error-bg: color-mix(in oklab, var(--carbide-red-400) 16%, var(--carbide-layer-1));
+    --carbide-status-error-border: var(--carbide-red-400);
+    --carbide-status-error-text: var(--carbide-red-400);
+  }
+}
+
+[data-theme='dark'] {
+
+  --carbide-status-info-bg: color-mix(in oklab, var(--carbide-accent) 16%, var(--carbide-layer-1));
+  --carbide-status-info-border: var(--carbide-accent);
+  --carbide-status-info-text: var(--carbide-accent-text);
+
+  --carbide-status-success-bg: color-mix(in oklab, var(--carbide-green-500) 16%, var(--carbide-layer-1));
+  --carbide-status-success-border: var(--carbide-green-500);
+  --carbide-status-success-text: var(--carbide-green-500);
+
+  --carbide-status-warn-bg: color-mix(in oklab, var(--carbide-yellow-400) 16%, var(--carbide-layer-1));
+  --carbide-status-warn-border: var(--carbide-yellow-400);
+  --carbide-status-warn-text: var(--carbide-yellow-400);
+
+  --carbide-status-critical-bg: color-mix(in oklab, var(--carbide-orange-400) 16%, var(--carbide-layer-1));
+  --carbide-status-critical-border: var(--carbide-orange-400);
+  --carbide-status-critical-text: var(--carbide-orange-400);
+
+  --carbide-status-error-bg: color-mix(in oklab, var(--carbide-red-400) 16%, var(--carbide-layer-1));
+  --carbide-status-error-border: var(--carbide-red-400);
+  --carbide-status-error-text: var(--carbide-red-400);
+}
